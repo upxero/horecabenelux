@@ -34,8 +34,8 @@ const DynamicBookingWrapper = dynamic(
 async function PropertyDetailsPage({ params }: { params: { id: string } }) {
   const property = await fetchPropertyDetails(params.id);
   if (!property) redirect('/');
-  const { baths, bedrooms, beds, guests } = property;
-  const details = { baths, bedrooms, beds, guests };
+  const { aantal_gasten, aantal_medewerkers, aantal_tafels, aantal_bars } = property;
+  const details = { aantal_gasten, aantal_medewerkers, aantal_tafels, aantal_bars };
   const firstName = property.profile.firstName;
   const profileImage = property.profile.profileImage;
 
