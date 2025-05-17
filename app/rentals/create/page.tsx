@@ -13,48 +13,39 @@ function CreatePropertyPage() {
   return (
     <section>
       <h1 className='text-2xl font-semibold mb-8 capitalize'>
-        create property
+      bedrijf toevoegen
       </h1>
       <div className='border p-8 rounded'>
-        <h3 className='text-lg mb-4 font-medium'>General Info</h3>
+        <h3 className='text-lg mb-4 font-medium'>Algemene informatie</h3>
         <FormContainer action={createPropertyAction}>
           <div className='grid md:grid-cols-2 gap-8 mb-4'>
             <FormInput
               name='name'
               type='text'
-              label='Name (20 limit)'
-              defaultValue='Cabin in Latvia'
+              label='Naam (max. 20 tekens)'
+              defaultValue='Bijvoorbeeld: De Gouden Lepel'
             />
             <FormInput
               name='tagline'
               type='text'
-              label='Tagline (30 limit)'
-              defaultValue='Dream Getaway Awaits You Here'
+              label='Slogan (max. 30 tekens)'
+              defaultValue='Bijvoorbeeld: Waar smaak en sfeer samenkomen'
             />
-            {/* price */}
-            <PriceInput />
             {/* categories */}
             <CategoriesInput />
           </div>
           {/* text area / description */}
           <TextAreaInput
             name='description'
-            labelText='Description (10 - 1000 words)'
+            labelText='Beschrijving (10 - 1000 woorden)'
           />
           <div className='grid sm:grid-cols-2 gap-8 mt-4'>
             <CountriesInput />
             <ImageInput />
           </div>
-          <h3 className='text-lg mt-8 mb-4 font-medium'>
-            Accommodation Details
-          </h3>
-          <CounterInput detail='guests' />
-          <CounterInput detail='bedrooms' />
-          <CounterInput detail='beds' />
-          <CounterInput detail='baths' />
-          <h3 className='text-lg mt-10 mb-6 font-medium'>Amenities</h3>
+          <h3 className='text-lg mt-10 mb-6 font-medium'>Voorzieningen</h3>
           <AmenitiesInput />
-          <SubmitButton text='create rental' className='mt-12' />
+          <SubmitButton text='Bedrijf toevoegen' className='mt-12' />
         </FormContainer>
       </div>
     </section>
