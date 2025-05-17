@@ -19,24 +19,26 @@ function CounterInput({
   };
 
   const decreaseCount = () => {
-    setCount((prevCount) => {
-      if (prevCount > 0) {
-        return prevCount - 1;
-      }
-      return prevCount;
-    });
+    setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
   };
+
+  // Helper functie om de detail string om te zetten naar een mooi label
+  function prettifyLabel(text: string) {
+    return text
+      .replace(/_/g, ' ')                // underscores vervangen door spaties
+      .replace(/\b\w/g, (char) => char.toUpperCase()); // eerste letter van elk woord hoofdletter
+  }
 
   return (
     <Card className='mb-4'>
-      {/* input */}
+      {/* verborgen input voor formulierverwerking */}
       <input type='hidden' name={detail} value={count} />
       <CardHeader className='flex flex-col gap-y-5'>
         <div className='flex items-center justify-between flex-wrap'>
           <div className='flex flex-col'>
-            <h2 className='font-medium capitalize'>{detail}</h2>
+            <h2 className='font-medium capitalize'>{prettifyLabel(detail)}</h2>
             <p className='text-muted-foreground text-sm'>
-              Specify the number of {detail}
+              Geef het aantal {prettifyLabel(detail).toLowerCase()}
             </p>
           </div>
           <div className='flex items-center gap-4'>
@@ -63,4 +65,6 @@ function CounterInput({
     </Card>
   );
 }
+
 export default CounterInput;
+
