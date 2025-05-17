@@ -30,7 +30,7 @@ function NavSearch() {
   return (
     <Input
       type='text'
-      placeholder='find a property...'
+      placeholder='Zoek een horecazaak in de buurt...'
       className='max-w-xs dark:bg-muted'
       onChange={(e) => {
         setSearch(e.target.value);

@@ -1,12 +1,8 @@
 import { IconType } from 'react-icons';
-import { MdCabin } from 'react-icons/md';
-
-import { TbCaravan, TbTent, TbBuildingCottage } from 'react-icons/tb';
-
-import { GiWoodCabin, GiMushroomHouse } from 'react-icons/gi';
-import { PiWarehouse, PiLighthouse, PiVan } from 'react-icons/pi';
-
-import { GoContainer } from 'react-icons/go';
+import { FaUtensils, FaCoffee, FaTruck, FaBeer, FaBed, FaIceCream, FaConciergeBell, FaGlassCheers, FaStoreAlt } from 'react-icons/fa';
+import { MdLocalBar } from 'react-icons/md';
+import { GiCakeSlice } from 'react-icons/gi';
+import { TbBuildingCottage } from 'react-icons/tb';
 
 type Category = {
   label: CategoryLabel;
@@ -14,57 +10,56 @@ type Category = {
 };
 
 export type CategoryLabel =
-  | 'cabin'
-  | 'tent'
-  | 'airstream'
-  | 'cottage'
-  | 'container'
-  | 'caravan'
-  | 'tiny'
-  | 'magic'
-  | 'warehouse'
-  | 'lodge';
+  | 'restaurant'
+  | 'cafe'
+  | 'foodtruck'
+  | 'bar'
+  | 'hotel'
+  | 'icecream'
+  | 'catering'
+  | 'bakery'
+  | 'drinks'
+  | 'delishop';
 
 export const categories: Category[] = [
   {
-    label: 'cabin',
-    icon: MdCabin,
+    label: 'restaurant',
+    icon: FaUtensils,
   },
   {
-    label: 'airstream',
-    icon: PiVan,
+    label: 'cafe',
+    icon: FaCoffee,
   },
   {
-    label: 'tent',
-    icon: TbTent,
+    label: 'foodtruck',
+    icon: FaTruck,
   },
   {
-    label: 'warehouse',
-    icon: PiWarehouse,
+    label: 'bar',
+    icon: MdLocalBar,
   },
   {
-    label: 'cottage',
-    icon: TbBuildingCottage,
+    label: 'hotel',
+    icon: FaBed,
   },
   {
-    label: 'magic',
-    icon: GiMushroomHouse,
+    label: 'icecream',
+    icon: FaIceCream,
   },
   {
-    label: 'container',
-    icon: GoContainer,
+    label: 'catering',
+    icon: FaConciergeBell,
   },
   {
-    label: 'caravan',
-    icon: TbCaravan,
-  },
-
-  {
-    label: 'tiny',
-    icon: PiLighthouse,
+    label: 'bakery',
+    icon: GiCakeSlice,
   },
   {
-    label: 'lodge',
-    icon: GiWoodCabin,
+    label: 'drinks',
+    icon: FaGlassCheers,
+  },
+  {
+    label: 'delishop',
+    icon: FaStoreAlt,
   },
 ];

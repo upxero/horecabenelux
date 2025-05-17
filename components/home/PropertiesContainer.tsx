@@ -17,9 +17,9 @@ async function PropertiesContainer({
   if (properties.length === 0) {
     return (
       <EmptyList
-        heading='No results.'
-        message='Try changing or removing some of your filters.'
-        btnText='Clear Filters'
+        heading='Geen resultaten gevonden.'
+        message='Probeer je filters aan te passen of te verwijderen.'
+        btnText='Filters wissen'
       />
     );
   }

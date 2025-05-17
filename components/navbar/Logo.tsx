@@ -1,14 +1,25 @@
-import Link from 'next/link';
-import { LuTent } from 'react-icons/lu';
-import { Button } from '../ui/button';
+import Link from 'next/link'
+import Image from 'next/image'
+import { Button } from '../ui/button'
 
 function Logo() {
   return (
-    <Button size='icon' asChild>
-      <Link href='/'>
-        <LuTent className='w-6 h-6' />
+    <Button
+      variant="ghost"
+      asChild
+      className="p-0 h-auto w-auto"
+    >
+      <Link href="/">
+        <Image
+          src="/horecabenelux-logo.png"
+          alt="Logo"
+          width={75}  
+          height={75} 
+          priority
+        />
       </Link>
     </Button>
-  );
+  )
 }
-export default Logo;
+
+export default Logo
