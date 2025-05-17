@@ -34,10 +34,10 @@ model Property {
   country     String
   description String
   price       Int
-  guests      Int
-  bedrooms    Int
-  beds        Int
-  baths       Int
+  aantal_gasten     Int
+  aantal_medewerkers Int
+  aantal_tafels     Int
+  aantal_bars       Int
   amenities   String
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
