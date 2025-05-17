@@ -1,6 +1,8 @@
 [build]
-  command = "next build"
+  command = "npm run build"
+  functions = "netlify/functions"
   publish = ".next"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[build.environment]
+  PRISMA_CLI_QUERY_ENGINE_TYPE = "binary"
+  NETLIFY_USE_CACHE = "false"
