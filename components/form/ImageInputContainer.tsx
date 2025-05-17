@@ -6,7 +6,7 @@ import FormContainer from './FormContainer';
 import ImageInput from './ImageInput';
 import { SubmitButton } from './Buttons';
 import { type actionFunction } from '@/utils/types';
-import { LuUser2 } from 'react-icons/lu';
+import { LuUser } from 'react-icons/lu';
 
 type ImageInputContainerProps = {
   image: string;
@@ -21,7 +21,7 @@ function ImageInputContainer(props: ImageInputContainerProps) {
   const [isUpdateFormVisible, setUpdateFormVisible] = useState(false);
 
   const userIcon = (
-    <LuUser2 className='w-24 h-24 bg-primary rounded text-white mb-4' />
+    <LuUser className='w-24 h-24 bg-primary rounded text-white mb-4' />
   );
   return (
     <div>
