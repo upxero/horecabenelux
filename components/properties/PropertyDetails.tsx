@@ -2,23 +2,24 @@ import { formatQuantity } from '@/utils/format';
 
 type PropertyDetailsProps = {
   details: {
-    bedrooms: number;
-    baths: number;
-    guests: number;
-    beds: number;
+    aantal_gasten: number;
+    aantal_medewerkers: number;
+    aantal_tafels: number;
+    aantal_bars: number;
   };
 };
 
 function PropertyDetails({
-  details: { bedrooms, baths, guests, beds },
+  details: { aantal_gasten, aantal_medewerkers, aantal_tafels, aantal_bars },
 }: PropertyDetailsProps) {
   return (
     <p className='text-md font-light'>
-      <span>{formatQuantity(bedrooms, 'bedroom')} &middot;</span>
-      <span>{formatQuantity(baths, 'bath')} &middot;</span>
-      <span>{formatQuantity(guests, 'guest')} &middot;</span>
-      <span>{formatQuantity(beds, 'bed')}</span>
+      <span>{formatQuantity(aantal_gasten, 'gast')} &middot;</span>
+      <span>{formatQuantity(aantal_medewerkers, 'medewerker')} &middot;</span>
+      <span>{formatQuantity(aantal_tafels, 'tafel')} &middot;</span>
+      <span>{formatQuantity(aantal_bars, 'bar')}</span>
     </p>
   );
 }
+
 export default PropertyDetails;
