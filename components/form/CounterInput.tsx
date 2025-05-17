@@ -1,3 +1,10 @@
+'use client';
+
+import { Card, CardHeader } from '@/components/ui/card';
+import { LuMinus, LuPlus } from 'react-icons/lu';
+import { Button } from '../ui/button';
+import { useState } from 'react';
+
 function CounterInput({
   detail,
   defaultValue,
@@ -15,13 +22,13 @@ function CounterInput({
     setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
   };
 
-  // Debug: toon count elke render
-  console.log(`CounterInput '${detail}' count:`, count);
+  // Debug-log om te controleren wat de waarde is
+  console.log(`CounterInput: ${detail} =`, count);
 
   // Helper functie om de detail string om te zetten naar een mooi label
   function prettifyLabel(text: string) {
     return text
-      .replace(/_/g, ' ')                // underscores vervangen door spaties
+      .replace(/_/g, ' ') // underscores vervangen door spaties
       .replace(/\b\w/g, (char) => char.toUpperCase()); // eerste letter van elk woord hoofdletter
   }
 
@@ -61,3 +68,6 @@ function CounterInput({
     </Card>
   );
 }
+
+export default CounterInput;
+
