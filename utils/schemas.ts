@@ -18,6 +18,7 @@ export function validateWithZodSchema<T>(
   schema: ZodSchema<T>,
   data: unknown
 ): T {
+  console.log('ZOD input:', data);
   const result = schema.safeParse(data);
 
   if (!result.success) {

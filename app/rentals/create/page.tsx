@@ -23,13 +23,13 @@ function CreatePropertyPage() {
               name='name'
               type='text'
               label='Naam (max. 20 tekens)'
-              defaultValue='Bijvoorbeeld: De Gouden Lepel'
+              defaultValue='De Gouden Lepel'
             />
             <FormInput
               name='tagline'
               type='text'
               label='Slogan (max. 30 tekens)'
-              defaultValue='Bijvoorbeeld: Waar smaak en sfeer samenkomen'
+              defaultValue='Waar smaak en sfeer samenkomen'
             />
             {/* price */}
             <PriceInput />
