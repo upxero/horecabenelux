@@ -31,6 +31,8 @@ function CreatePropertyPage() {
               label='Slogan (max. 30 tekens)'
               defaultValue='Bijvoorbeeld: Waar smaak en sfeer samenkomen'
             />
+            {/* price */}
+            <PriceInput />
             {/* categories */}
             <CategoriesInput />
           </div>
