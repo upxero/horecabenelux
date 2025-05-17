@@ -1,22 +1,4 @@
 import { IconType } from 'react-icons';
-import {
-  FiCoffee,
-  FiTruck,
-  FiShoppingBag,
-  FiWifi,
-  FiMonitor,
-  FiWind,
-  FiSmile,
-  FiCheckCircle,
-  FiHeart,
-  FiMapPin,
-  FiEye,
-  FiUsers,
-  FiGift,
-  FiMusic,
-  FiMap,
-  FiGlobe,
-} from 'react-icons/fi';
 
 export type Amenity = {
   name: string;
@@ -24,8 +6,31 @@ export type Amenity = {
   selected: boolean;
 };
 
-export const horecaAmenities: Amenity[] = [
-  { name: 'Terras', icon: FiCoffee, selected: false },
+import {
+  FiCoffee,
+  FiTruck,
+  FiShoppingBag,
+  FiWind,
+  FiHeart,
+  FiWifi,
+  FiMonitor,
+  FiSmile,
+  FiCheckCircle,
+  FiUsers,
+  FiMapPin,
+  FiEye,
+  FiGift,
+  FiMusic,
+  FiMap,
+  FiGlobe,
+  FiTv,
+  FiDroplet,
+  FiSun,
+  FiZap,
+} from 'react-icons/fi';
+
+export const amenities: Amenity[] = [
+  { name: 'Terras', icon: FiSun, selected: false },
   { name: 'Afhaalservice', icon: FiTruck, selected: false },
   { name: 'Levering aan huis', icon: FiShoppingBag, selected: false },
   { name: 'Vegetarische/vegan opties', icon: FiHeart, selected: false },
@@ -42,4 +47,7 @@ export const horecaAmenities: Amenity[] = [
   { name: 'Live muziek', icon: FiMusic, selected: false },
   { name: 'Dicht bij OV', icon: FiMap, selected: false },
   { name: 'Meertalige bediening', icon: FiGlobe, selected: false },
+  { name: 'TV-schermen aanwezig', icon: FiTv, selected: false },
+  { name: 'Toiletten beschikbaar', icon: FiDroplet, selected: false },
+  { name: 'Sfeerverlichting', icon: FiZap, selected: false },
 ];
