@@ -14,7 +14,7 @@ function CategoriesInput({ defaultValue }: { defaultValue?: string }) {
   return (
     <div className='mb-2'>
       <Label htmlFor={name} className='capitalize'>
-        Categories
+      Categorieën
       </Label>
       <Select
         defaultValue={defaultValue || categories[0].label}

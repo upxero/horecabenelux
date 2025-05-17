@@ -1,10 +1,3 @@
-'use client';
-import { Card, CardHeader } from '@/components/ui/card';
-import { LuMinus, LuPlus } from 'react-icons/lu';
-
-import { Button } from '../ui/button';
-import { useState } from 'react';
-
 function CounterInput({
   detail,
   defaultValue,
@@ -22,6 +15,9 @@ function CounterInput({
     setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
   };
 
+  // Debug: toon count elke render
+  console.log(`CounterInput '${detail}' count:`, count);
+
   // Helper functie om de detail string om te zetten naar een mooi label
   function prettifyLabel(text: string) {
     return text
@@ -38,7 +34,7 @@ function CounterInput({
           <div className='flex flex-col'>
             <h2 className='font-medium capitalize'>{prettifyLabel(detail)}</h2>
             <p className='text-muted-foreground text-sm'>
-              Geef het aantal {prettifyLabel(detail).toLowerCase()}
+              Geef het {prettifyLabel(detail).toLowerCase()}
             </p>
           </div>
           <div className='flex items-center gap-4'>
@@ -65,6 +61,3 @@ function CounterInput({
     </Card>
   );
 }
-
-export default CounterInput;
-

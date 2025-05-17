@@ -13,7 +13,7 @@ function PriceInput({ defaultValue }: PriceInputProps) {
   return (
     <div className='mb-2'>
       <Label htmlFor={name} className='capitalize'>
-        Price (€)
+        Prijs (€)
       </Label>
       <Input
         id={name}
