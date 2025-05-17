@@ -45,6 +45,13 @@ function CreatePropertyPage() {
             <CountriesInput />
             <ImageInput />
           </div>
+          <h3 className='text-lg mt-8 mb-4 font-medium'>
+            Bedrijfsdetails
+          </h3>
+          <CounterInput detail='zitplaatsen' label='Aantal zitplaatsen' />
+          <CounterInput detail='personeel' label='Aantal personeelsleden' />
+          <CounterInput detail='openingsdagen' label='Openingsdagen per week' />
+          <CounterInput detail='jaarervaring' label='Jaren ervaring in horeca' />
           <h3 className='text-lg mt-10 mb-6 font-medium'>Voorzieningen</h3>
           <AmenitiesInput />
           <SubmitButton text='Bedrijf toevoegen' className='mt-12' />
