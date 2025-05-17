@@ -147,10 +147,18 @@ export const createPropertyAction = async (
   formData: FormData
 ): Promise<{ message: string }> => {
   const user = await getAuthUser();
+
+  const profile = await db.profile.findUnique({
+    where: { clerkId: user.id },
+  });
+
+  if (!profile) {
+    throw new Error('Geen profiel gevonden voor deze gebruiker.');
+  }
+
   try {
     const rawData = Object.fromEntries(formData);
     const file = formData.get('image') as File;
-    console.log(rawData);
 
     const validatedFields = validateWithZodSchema(propertySchema, rawData);
     const validatedFile = validateWithZodSchema(imageSchema, { image: file });
@@ -160,12 +168,13 @@ export const createPropertyAction = async (
       data: {
         ...validatedFields,
         image: fullPath,
-        profileId: user.id,
+        profileId: profile.clerkId, // <- correcte FK
       },
     });
   } catch (error) {
     return renderError(error);
   }
+
   redirect('/');
 };
 
