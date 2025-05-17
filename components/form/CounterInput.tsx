@@ -22,9 +22,6 @@ function CounterInput({
     setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
   };
 
-  // Debug-log om te controleren wat de waarde is
-  console.log(`CounterInput: ${detail} =`, count);
-
   // Helper functie om de detail string om te zetten naar een mooi label
   function prettifyLabel(text: string) {
     return text
