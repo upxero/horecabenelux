@@ -25,7 +25,7 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
 
   return (
     <section>
-      <h1 className='text-2xl font-semibold mb-8 capitalize'>Edit Property</h1>
+      <h1 className='text-2xl font-semibold mb-8 capitalize'>Bewerk bedrijf</h1>
       <div className='border p-8 rounded-md '>
         <ImageInputContainer
           name={property.name}
@@ -63,12 +63,12 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
           />
 
           <h3 className='text-lg mt-8 mb-4 font-medium'>
-            Accommodation Details
+            Bedrijfsdetails
           </h3>
-          <CounterInput detail='guests' defaultValue={property.guests} />
-          <CounterInput detail='bedrooms' defaultValue={property.bedrooms} />
-          <CounterInput detail='beds' defaultValue={property.beds} />
-          <CounterInput detail='baths' defaultValue={property.baths} />
+          <CounterInput detail='aantal_gasten' defaultValue={property.aantal_gasten} />
+          <CounterInput detail='aantal_medewerkers' defaultValue={property.aantal_medewerkers} />
+          <CounterInput detail='aantal_tafels' defaultValue={property.aantal_tafels} />
+          <CounterInput detail='aantal_bars' defaultValue={property.aantal_bars} />
           <h3 className='text-lg mt-10 mb-6 font-medium'>Amenities</h3>
           <AmenitiesInput defaultValue={defaultAmenities} />
           <SubmitButton text='edit property' className='mt-12' />
