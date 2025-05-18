@@ -588,9 +588,7 @@ export const updatePropertyAction = async (
 
   try {
     const rawData = Object.fromEntries(formData);
-    console.log("🔧 Ontvangen rawData in updatePropertyAction:", rawData);
     const validatedFields = validateWithZodSchema(propertySchema, rawData);
-    console.log("✅ Gevalideerde data:", validatedFields);
     await db.property.update({
       where: {
         id: propertyId,

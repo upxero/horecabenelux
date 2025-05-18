@@ -27,7 +27,7 @@ function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
     <section>
       <input
         type='hidden'
-        name='voorzieningen'
+        name='amenities'
         value={JSON.stringify(selectedAmenities)}
       />
       <div className='grid grid-cols-2 gap-4'>

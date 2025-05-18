@@ -6,7 +6,7 @@ import { useToast } from '../ui/use-toast';
 function SignOutLink() {
   const { toast } = useToast();
   const handleLogout = () => {
-    toast({ description: 'You have been signed out.' });
+    toast({ description: 'Je bent uitgelogd.' });
   };
 
   return (
