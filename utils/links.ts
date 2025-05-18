@@ -10,7 +10,7 @@ export const links: NavLink[] = [
   { href: '/reviews ', label: 'reviews' },
   { href: '/reservaties ', label: 'reservaties' },
   { href: '/bedrijf/create ', label: 'bedrijf toevoegen' },
-  { href: '/bedrijven', label: 'mijn bedrijven' },
+  { href: '/rentals', label: 'mijn bedrijven' },
   { href: '/admin', label: 'admin' },
   { href: '/profiel ', label: 'profiel' },
 ];
