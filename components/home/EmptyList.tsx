@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { Button } from '../ui/button';
 function EmptyList({
-  heading = 'No items in the list.',
-  message = 'Keep exploring our properties',
-  btnText = 'back home',
+  heading = 'Geen items in de lijst.',
+  message = 'Ontdek meer horecazaken op ons platform',
+  btnText = 'Terug naar startpagina',
 }: {
   heading?: string;
   message?: string;

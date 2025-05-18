@@ -6,7 +6,7 @@ function ImageInput() {
   return (
     <div className='mb-2'>
       <Label htmlFor={name} className='capitalize'>
-        Image
+        Afbeelding
       </Label>
       <Input
         id={name}

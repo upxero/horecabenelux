@@ -250,7 +250,7 @@ export const toggleFavoriteAction = async (prevState: {
       });
     }
     revalidatePath(pathname);
-    return { message: favoriteId ? 'Removed from Faves' : 'Added to Faves' };
+    return { message: favoriteId ? 'Verwijderd uit favorieten' : 'Toegevoegd aan favorieten' };
   } catch (error) {
     return renderError(error);
   }

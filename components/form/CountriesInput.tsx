@@ -14,7 +14,7 @@ function CountriesInput({ defaultValue }: { defaultValue?: string }) {
   return (
     <div className='mb-2'>
       <Label htmlFor={name} className='capitalize'>
-        country
+        land
       </Label>
 
       <Select
