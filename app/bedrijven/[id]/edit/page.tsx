@@ -29,7 +29,7 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
       <div className='border p-8 rounded-md '>
         <ImageInputContainer
           name={property.name}
-          text='Update Image'
+          text='Update Afbeelding'
           action={updatePropertyImageAction}
           image={property.image}
         >
@@ -42,13 +42,13 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
             <FormInput
               name='name'
               type='text'
-              label='Name (20 limit)'
+              label='Naam (max. 20 tekens)'
               defaultValue={property.name}
             />
             <FormInput
               name='tagline'
               type='text '
-              label='Tagline (30 limit)'
+              label='Slogan (max. 30 tekens)'
               defaultValue={property.tagline}
             />
             <PriceInput defaultValue={property.price} />
@@ -58,7 +58,7 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
 
           <TextAreaInput
             name='description'
-            labelText='Description (10 - 100 Words)'
+            labelText='Beschrijving (10 - 1000 woorden)'
             defaultValue={property.description}
           />
 
@@ -71,7 +71,7 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
           <CounterInput detail='aantal_bars' defaultValue={property.aantal_bars} />
           <h3 className='text-lg mt-10 mb-6 font-medium'>Amenities</h3>
           <AmenitiesInput defaultValue={defaultAmenities} />
-          <SubmitButton text='edit property' className='mt-12' />
+          <SubmitButton text='bewerk bedrijf' className='mt-12' />
         </FormContainer>
       </div>
     </section>
