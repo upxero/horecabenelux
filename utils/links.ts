@@ -12,5 +12,5 @@ export const links: NavLink[] = [
   { href: '/bedrijven/create ', label: 'bedrijf toevoegen' },
   { href: '/bedrijven', label: 'mijn bedrijven' },
   { href: '/admin', label: 'admin' },
-  { href: '/profiel ', label: 'profiel' },
+  { href: '/profile ', label: 'profiel' },
 ];
