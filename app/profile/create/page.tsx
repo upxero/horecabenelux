@@ -10,7 +10,7 @@ async function CreateProfilePage() {
   if (user?.privateMetadata?.hasProfile) redirect('/');
   return (
     <section>
-      <h1 className='text-2xl font-semibold mb-8 capitalize'> new user</h1>
+      <h1 className='text-2xl font-semibold mb-8 capitalize'> nieuwe gebruiker</h1>
       <div className='border p-8 rounded-md '>
         <FormContainer action={createProfileAction}>
           <div className='grid md:grid-cols-2 gap-4 mt-4'>

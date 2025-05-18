@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/navbar/Navbar';
 import Providers from './providers';
 import { ClerkProvider } from '@clerk/nextjs';
+import { nlNL } from '@clerk/localizations'
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -17,11 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider 
-    localization={{
-      locale: 'nl-NL'
-    }}
-    >
+    <ClerkProvider localization={nlNL}>
       <html lang='nl' suppressHydrationWarning>
         <body className={inter.className}>
           <Providers>

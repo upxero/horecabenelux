@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/localizations": "^3.16.0",
     "@clerk/nextjs": "^5.0.1",
     "@prisma/client": "^5.12.1",
     "@radix-ui/react-checkbox": "^1.0.4",
