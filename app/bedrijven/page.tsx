@@ -30,16 +30,16 @@ async function RentalsPage() {
 
   return (
     <div className='mt-16'>
-      <h4 className='mb-4 capitalize'>Actieve Bedrijven : {rentals.length}</h4>
+      <h4 className='mb-4 capitalize'>Active Properties : {rentals.length}</h4>
       <Table>
-        <TableCaption>Een overzicht van al je bedrijven.</TableCaption>
+        <TableCaption>A list of all your properties.</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead>Bedrijfsnaam</TableHead>
-            <TableHead>Bedrag</TableHead>
-            <TableHead>Aantal interacties	</TableHead>
-            <TableHead>Totaal verkeer</TableHead>
-            <TableHead>Acties</TableHead>
+            <TableHead>Property Name</TableHead>
+            <TableHead>Nightly Rate </TableHead>
+            <TableHead>Nights Booked</TableHead>
+            <TableHead>Total Income</TableHead>
+            <TableHead>Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
