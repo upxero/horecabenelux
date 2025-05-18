@@ -31,7 +31,7 @@ export function SubmitButton({
       {pending ? (
         <>
           <ReloadIcon className='mr-2 h-4 w-4 animate-spin' />
-          Please wait...
+          Even geduld...
         </>
       ) : (
         text
