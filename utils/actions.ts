@@ -561,8 +561,8 @@ export async function deleteRentalAction(prevState: { propertyId: string }) {
       },
     });
 
-    revalidatePath('/rentals');
-    return { message: 'Verhuur succesvol verwijderd' };
+    revalidatePath('/bedrijven');
+    return { message: 'Bedrijf succesvol verwijderd' };
   } catch (error) {
     return renderError(error);
   }
@@ -599,7 +599,7 @@ export const updatePropertyAction = async (
       },
     });
 
-    revalidatePath(`/rentals/${propertyId}/edit`);
+    revalidatePath(`/bedrijven/${propertyId}/edit`);
     return { message: 'Update succesvol' };
   } catch (error) {
     return renderError(error);
@@ -627,7 +627,7 @@ export const updatePropertyImageAction = async (
         image: fullPath,
       },
     });
-    revalidatePath(`/rentals/${propertyId}/edit`);
+    revalidatePath(`/bedrijven/${propertyId}/edit`);
     return { message: 'Afbeelding bijgewerkt' };
   } catch (error) {
     return renderError(error);
