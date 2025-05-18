@@ -153,7 +153,7 @@ export const createPropertyAction = async (
   });
 
   if (!profile) {
-    throw new Error('Geen profiel gevonden voor deze gebruiker.');
+    return { message: 'Geen profiel gevonden voor deze gebruiker.' };
   }
 
   try {
@@ -168,14 +168,15 @@ export const createPropertyAction = async (
       data: {
         ...validatedFields,
         image: fullPath,
-        profileId: profile.clerkId, // <- correcte FK
+        profileId: profile.clerkId,
       },
     });
-  } catch (error) {
-    return renderError(error);
-  }
 
-  redirect('/');
+    revalidatePath('/');
+    return { message: 'Eigendom succesvol aangemaakt' }; // <-- ✅ consistent object
+  } catch (error) {
+    return renderError(error); // <-- deze moet ook altijd een { message } object geven
+  }
 };
 
 export const fetchProperties = async ({
@@ -294,11 +295,13 @@ export const fetchPropertyDetails = async (id: string) => {
   });
 };
 
-export async function createReviewAction(prevState: any, formData: FormData) {
+export async function createReviewAction(
+  prevState: any,
+  formData: FormData
+): Promise<{ message: string }> {
   const user = await getAuthUser();
   try {
     const rawData = Object.fromEntries(formData);
-
     const validatedFields = validateWithZodSchema(createReviewSchema, rawData);
 
     await db.review.create({
@@ -307,10 +310,11 @@ export async function createReviewAction(prevState: any, formData: FormData) {
         profileId: user.id,
       },
     });
+
     revalidatePath(`/properties/${validatedFields.propertyId}`);
-    return { message: 'Review succesvol verzonden' };
+    return { message: 'Review succesvol verzonden' }; // ✅
   } catch (error) {
-    return renderError(error);
+    return renderError(error); // ✅ moet altijd { message } returnen
   }
 }
 
