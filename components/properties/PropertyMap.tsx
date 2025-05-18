@@ -20,7 +20,7 @@ function PropertyMap({ countryCode }: { countryCode: string }) {
   return (
     <div className='mt-4'>
       <div className='mb-4'>
-        <Title text='Where you will be staying' />
+        <Title text='Locatie van het bedrijf' />
         <CountryFlagAndName countryCode={countryCode} />
       </div>
       <MapContainer

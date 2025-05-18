@@ -9,7 +9,7 @@ function Amenities({ amenities }: { amenities: string }) {
 
   return (
     <div className='mt-4'>
-      <Title text='What this place offers' />
+      <Title text='Voorzieningen' />
       <div className='grid md:grid-cols-2 gap-x-4'>
         {amenitiesList.map((amenity) => {
           if (!amenity.selected) return null;
