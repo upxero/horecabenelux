@@ -34,6 +34,7 @@ function PropertyCard({ property }: { property: PropertyCardProps }) {
         </p>
         <div className='flex justify-between items-center mt-1'>
           <p className='text-sm mt-1'>
+            <span className='text-muted-foreground mr-1'>Gemiddelde prijs:</span>
             <span className='font-semibold'>{formatCurrency(price)} </span>
             
           </p>

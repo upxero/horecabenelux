@@ -22,8 +22,8 @@ async function RentalsPage() {
   if (rentals.length === 0) {
     return (
       <EmptyList
-        heading='No rentals to display.'
-        message="Don't hesitate to create a rental."
+        heading='Geen bedrijven om weer te geven.'
+        message="Voeg gerust een bedrijf toe."
       />
     );
   }
