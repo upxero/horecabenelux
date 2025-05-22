@@ -23,13 +23,13 @@ function CreatePropertyPage() {
               name='name'
               type='text'
               label='Naam (max. 20 tekens)'
-              defaultValue='De Gouden Lepel'
+              placeholder='De Gouden Lepel'
             />
             <FormInput
               name='tagline'
               type='text'
               label='Slogan (max. 30 tekens)'
-              defaultValue='Waar smaak en sfeer samenkomen'
+              placeholder='Waar smaak en sfeer samenkomen'
             />
             <FormInput
               name='website'
@@ -51,11 +51,11 @@ function CreatePropertyPage() {
             <CountriesInput />
             <ImageInput />
           </div>
-          <h3 className="text-lg mt-8 mb-4 font-medium">Bedrijfsdetails</h3>
+          {/*<h3 className="text-lg mt-8 mb-4 font-medium">Bedrijfsdetails</h3>
           <CounterInput detail="aantal_gasten" />
           <CounterInput detail="aantal_medewerkers" />
           <CounterInput detail="aantal_tafels" />
-          <CounterInput detail="aantal_bars" />
+          <CounterInput detail="aantal_bars" /> */}
           <h3 className='text-lg mt-10 mb-6 font-medium'>Voorzieningen</h3>
           <AmenitiesInput />
           <SubmitButton text='Bedrijf toevoegen' className='mt-12' />
