@@ -91,6 +91,10 @@ export const propertySchema = z.object({
     message: 'aantal bars moet een positief getal zijn.',
   }),
   amenities: z.string(),
+  website: z
+    .string()
+    .url({ message: 'Voer een geldige URL in (bijv. https://voorbeeld.be).' })
+    .optional(),
 });
 
 export const createReviewSchema = z.object({

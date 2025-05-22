@@ -36,7 +36,7 @@ async function RentalsPage() {
         <TableHeader>
           <TableRow>
             <TableHead>Bedrijfsnaam</TableHead>
-            <TableHead>Max. Prijs</TableHead>
+            <TableHead>Gemiddelde Prijs</TableHead>
             <TableHead>Kliks deze week</TableHead>
             <TableHead>Aantal klikken</TableHead>
             <TableHead>Acties</TableHead>

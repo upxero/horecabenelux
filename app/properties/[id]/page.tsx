@@ -68,13 +68,20 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
           <Amenities amenities={property.amenities} />
           <DynamicMap countryCode={property.country} />
         </div>
-        <div className='lg:col-span-4 flex flex-col items-center'>
-          {/* calendar */}
-          <DynamicBookingWrapper
-            propertyId={property.id}
-            price={property.price}
-            bookings={property.bookings}
-          />
+        <div className='lg:col-span-4 flex flex-col items-center mt-6 lg:mt-0'>
+          {/* website */}
+          <div className="flex flex-col gap-4 w-full">
+          {property.website && (
+            <a
+              href={property.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary text-white text-center px-4 py-2 rounded-md hover:bg-primary/90"
+            >
+              Bezoek website
+            </a>
+          )}
+          </div>
         </div>
       </section>
       {/* after two column section */}

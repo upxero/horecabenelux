@@ -31,6 +31,12 @@ function CreatePropertyPage() {
               label='Slogan (max. 30 tekens)'
               defaultValue='Waar smaak en sfeer samenkomen'
             />
+            <FormInput
+              name='website'
+              type='url'
+              label='Website'
+              placeholder='https://voorbeeld-restaurant.nl'
+            />
             {/* price */}
             <PriceInput />
             {/* categories */}
