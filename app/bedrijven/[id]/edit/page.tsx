@@ -51,6 +51,12 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
               label='Slogan (max. 30 tekens)'
               defaultValue={property.tagline}
             />
+            <FormInput
+              name='website'
+              type='text'
+              label='Website'
+              defaultValue={property.website ?? ''}
+            />
             <PriceInput defaultValue={property.price} />
             <CategoriesInput defaultValue={property.category} />
             <CountriesInput defaultValue={property.country} />
