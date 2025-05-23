@@ -2,7 +2,6 @@ import FavoriteToggleButton from '@/components/card/FavoriteToggleButton';
 import PropertyRating from '@/components/card/PropertyRating';
 import BreadCrumbs from '@/components/properties/BreadCrumbs';
 import ImageContainer from '@/components/properties/ImageContainer';
-import PropertyDetails from '@/components/properties/PropertyDetails';
 import { FaFacebook, FaInstagram, FaLink } from 'react-icons/fa';
 import ShareButton from '@/components/properties/ShareButton';
 import UserInfo from '@/components/properties/UserInfo';
@@ -35,8 +34,6 @@ const DynamicBookingWrapper = dynamic(
 async function PropertyDetailsPage({ params }: { params: { id: string } }) {
   const property = await fetchPropertyDetails(params.id);
   if (!property) redirect('/');
-  const { aantal_gasten, aantal_medewerkers, aantal_tafels, aantal_bars } = property;
-  const details = { aantal_gasten, aantal_medewerkers, aantal_tafels, aantal_bars };
   const firstName = property.profile.firstName;
   const profileImage = property.profile.profileImage;
 
@@ -62,7 +59,6 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
             <h1 className='text-xl font-bold'>{property.name} </h1>
             <PropertyRating inPage propertyId={property.id} />
           </div>
-          {/* <PropertyDetails details={details} /> */}
           <UserInfo profile={{ firstName, profileImage }} />
           <Separator className='mt-4' />
           <Description description={property.description} />
