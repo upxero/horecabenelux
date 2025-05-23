@@ -96,17 +96,17 @@ export const propertySchema = z.object({
   .url({ message: 'Voer een geldige website-URL in (bijv. https://voorbeeld.be).' })
   .optional(),
 
-  reservationUrl: z
+  reservation: z
     .string()
     .url({ message: 'Voer een geldige reservatie-URL in (bijv. https://reserveren.jouwsite.be).' })
     .optional(),
 
-  facebookUrl: z
+  facebook: z
     .string()
     .url({ message: 'Voer een geldige Facebook-URL in (bijv. https://facebook.com/jouwpagina).' })
     .optional(),
 
-  instagramUrl: z
+  instagram: z
     .string()
     .url({ message: 'Voer een geldige Instagram-URL in (bijv. https://instagram.com/jouwpagina).' })
     .optional(),
