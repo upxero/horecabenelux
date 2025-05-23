@@ -94,19 +94,23 @@ export const propertySchema = z.object({
   website: z
   .string()
   .url({ message: 'Voer een geldige website-URL in (bijv. https://voorbeeld.be).' })
-  .optional(),
-  reservationUrl: z
-  .string()
-  .url({ message: 'Voer een geldige reservatie-URL in (bijv. https://reserveren.jouwsite.be).' })
-  .optional(),
-  facebookUrl: z
-  .string()
-  .url({ message: 'Voer een geldige Facebook-URL in (bijv. https://facebook.com/jouwpagina).' })
-  .optional(),
-  instagramUrl: z
-  .string()
-  .url({ message: 'Voer een geldige Instagram-URL in (bijv. https://instagram.com/jouwpagina).' })
-  .optional(),
+  .optional()
+  .or(z.literal('')),
+  reservation: z
+    .string()
+    .url({ message: 'Voer een geldige reservatie-URL in (bijv. https://reserveren.jouwsite.be).' })
+    .optional()
+    .or(z.literal('')),
+  facebook: z
+    .string()
+    .url({ message: 'Voer een geldige Facebook-URL in (bijv. https://facebook.com/jouwpagina).' })
+    .optional()
+    .or(z.literal('')),
+  instagram: z
+    .string()
+    .url({ message: 'Voer een geldige Instagram-URL in (bijv. https://instagram.com/jouwpagina).' })
+    .optional()
+    .or(z.literal('')),
 });
 
 export const createReviewSchema = z.object({
