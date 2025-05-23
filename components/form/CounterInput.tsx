@@ -12,7 +12,7 @@ function CounterInput({
   detail: string;
   defaultValue?: number;
 }) {
-  const [count, setCount] = useState(defaultValue || 0);
+  const [count, setCount] = useState(Number.isFinite(defaultValue) ? defaultValue : 0);
 
   const increaseCount = () => {
     setCount((prevCount) => prevCount + 1);
