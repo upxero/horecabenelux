@@ -34,10 +34,6 @@ model Property {
   country     String
   description String
   price       Int
-  aantal_gasten     Int
-  aantal_medewerkers Int
-  aantal_tafels     Int
-  aantal_bars       Int
   amenities   String
   website     String?
   reservation String?

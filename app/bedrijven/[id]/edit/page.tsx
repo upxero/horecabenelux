@@ -86,13 +86,6 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
             defaultValue={property.description}
           />
 
-          <h3 className='text-lg mt-8 mb-4 font-medium'>
-            Bedrijfsdetails
-          </h3>
-          <CounterInput detail='aantal_gasten' defaultValue={property.aantal_gasten} />
-          <CounterInput detail='aantal_medewerkers' defaultValue={property.aantal_medewerkers} />
-          <CounterInput detail='aantal_tafels' defaultValue={property.aantal_tafels} />
-          <CounterInput detail='aantal_bars' defaultValue={property.aantal_bars} />
           <h3 className='text-lg mt-10 mb-6 font-medium'>Amenities</h3>
           <AmenitiesInput defaultValue={defaultAmenities} />
           <SubmitButton text='bewerk bedrijf' className='mt-12' />

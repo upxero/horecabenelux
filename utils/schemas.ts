@@ -78,18 +78,6 @@ export const propertySchema = z.object({
     }
   ),
   country: z.string(),
-  aantal_gasten: z.coerce.number().int().min(0, {
-    message: 'aantal gasten moet een positief getal zijn.',
-  }),
-  aantal_medewerkers: z.coerce.number().int().min(0, {
-    message: 'aantal medewerkers moet een positief getal zijn.',
-  }),
-  aantal_tafels: z.coerce.number().int().min(0, {
-    message: 'aantal tafels moet een positief getal zijn.',
-  }),
-  aantal_bars: z.coerce.number().int().min(0, {
-    message: 'aantal bars moet een positief getal zijn.',
-  }),
   amenities: z.string(),
   website: z
   .string()
