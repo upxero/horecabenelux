@@ -7,7 +7,6 @@ export type Amenity = {
 };
 
 import {
-  FiCoffee,
   FiTruck,
   FiShoppingBag,
   FiWind,

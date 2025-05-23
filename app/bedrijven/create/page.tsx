@@ -37,6 +37,24 @@ function CreatePropertyPage() {
               label='Website'
               placeholder='https://voorbeeld-restaurant.nl'
             />
+            <FormInput
+              name='reservation'
+              type='url'
+              label='Reservatie link'
+              placeholder='https://reserveren.voorbeeld.nl'
+            />
+            <FormInput
+              name='facebook'
+              type='url'
+              label='Facebook link'
+              placeholder='https://facebook.com/voorbeeld'
+            />
+            <FormInput
+              name='instagram'
+              type='url'
+              label='Instagram link'
+              placeholder='https://instagram.com/voorbeeld'
+            />
             {/* price */}
             <PriceInput />
             {/* categories */}

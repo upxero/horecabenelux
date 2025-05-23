@@ -57,6 +57,24 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
               label='Website'
               defaultValue={property.website ?? ''}
             />
+            <FormInput
+              name='reservation'
+              type='text'
+              label='Reserveringslink'
+              defaultValue={property.reservation ?? ''}
+            />
+            <FormInput
+              name='facebook'
+              type='text'
+              label='Facebook-pagina'
+              defaultValue={property.facebook ?? ''}
+            />
+            <FormInput
+              name='instagram'
+              type='text'
+              label='Instagram-profiel'
+              defaultValue={property.instagram ?? ''}
+            />
             <PriceInput defaultValue={property.price} />
             <CategoriesInput defaultValue={property.category} />
             <CountriesInput defaultValue={property.country} />
