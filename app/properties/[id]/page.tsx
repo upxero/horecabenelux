@@ -3,6 +3,7 @@ import PropertyRating from '@/components/card/PropertyRating';
 import BreadCrumbs from '@/components/properties/BreadCrumbs';
 import ImageContainer from '@/components/properties/ImageContainer';
 import PropertyDetails from '@/components/properties/PropertyDetails';
+import { FaFacebook, FaInstagram, FaLink } from 'react-icons/fa';
 import ShareButton from '@/components/properties/ShareButton';
 import UserInfo from '@/components/properties/UserInfo';
 import { Separator } from '@/components/ui/separator';
@@ -85,38 +86,33 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
           {property.reservation && (
             <a
               href={property.reservation}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-600 text-white text-center px-4 py-2 rounded-md hover:bg-green-700"
+              className='btn btn-primary flex items-center gap-2'
+              target='_blank'
+              rel='noopener noreferrer'
             >
-              Reserveer nu
+              <FaLink /> Reserveer
             </a>
           )}
 
           {property.facebook && (
             <a
               href={property.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+              className='btn btn-outline flex items-center gap-2 text-blue-600'
+              target='_blank'
+              rel='noopener noreferrer'
             >
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M22 12a10 10 0 10-11.6 9.9v-7H8v-3h2.4V9.5c0-2.4 1.4-3.7 3.6-3.7 1 0 2 .2 2 .2v2.3h-1.1c-1.1 0-1.5.7-1.5 1.4V12h2.6l-.4 3h-2.2v7A10 10 0 0022 12z" />
-              </svg>
-              Facebook
+              <FaFacebook /> Facebook
             </a>
           )}
+
           {property.instagram && (
             <a
               href={property.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 text-white px-4 py-2 rounded-md hover:opacity-90"
+              className='btn btn-outline flex items-center gap-2 text-pink-500'
+              target='_blank'
+              rel='noopener noreferrer'
             >
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M7.5 2C4.5 2 2 4.5 2 7.5v9C2 19.5 4.5 22 7.5 22h9c3 0 5.5-2.5 5.5-5.5v-9C22 4.5 19.5 2 16.5 2h-9zm0 2h9c1.9 0 3.5 1.6 3.5 3.5v9c0 1.9-1.6 3.5-3.5 3.5h-9C5.6 20 4 18.4 4 16.5v-9C4 5.6 5.6 4 7.5 4zm9.25 1.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z" />
-              </svg>
-              Instagram
+              <FaInstagram /> Instagram
             </a>
           )}
         </div>

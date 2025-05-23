@@ -69,11 +69,11 @@ function CreatePropertyPage() {
             <CountriesInput />
             <ImageInput />
           </div>
-          <h3 className="text-lg mt-8 mb-4 font-medium">Bedrijfsdetails</h3>
+          {/* <h3 className="text-lg mt-8 mb-4 font-medium">Bedrijfsdetails</h3>
           <CounterInput detail="aantal_gasten" />
           <CounterInput detail="aantal_medewerkers" />
           <CounterInput detail="aantal_tafels" />
-          <CounterInput detail="aantal_bars" />
+          <CounterInput detail="aantal_bars" /> */}
           <h3 className='text-lg mt-10 mb-6 font-medium'>Voorzieningen</h3>
           <AmenitiesInput />
           <SubmitButton text='Bedrijf toevoegen' className='mt-12' />
