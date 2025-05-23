@@ -12,18 +12,15 @@ function CounterInput({
   detail: string;
   defaultValue?: number;
 }) {
-  const [count, setCount] = useState(Number.isFinite(defaultValue) ? defaultValue : 0);
+  const [count, setCount] = useState(defaultValue || 0);
 
   const increaseCount = () => {
-    setCount((prevCount) => (prevCount ?? 0) + 1);
+    setCount((prevCount) => prevCount + 1);
   };
-  
+
   const decreaseCount = () => {
-    setCount((prevCount) => {
-      const safeCount = prevCount ?? 0;
-      return safeCount > 0 ? safeCount - 1 : 0;
-    });
-  };  
+    setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
+  };
 
   // Helper functie om de detail string om te zetten naar een mooi label
   function prettifyLabel(text: string) {
