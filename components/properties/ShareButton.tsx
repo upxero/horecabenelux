@@ -40,7 +40,7 @@ function ShareButton({
         sideOffset={10}
         className='flex items-center gap-x-2 justify-center w-full'
       >
-        <FacebookShareButton url={shareLink} quote={name}>
+        <FacebookShareButton url={shareLink}>
           <FacebookIcon size={32} round />
         </FacebookShareButton>
         <TwitterShareButton url={shareLink} title={name}>
