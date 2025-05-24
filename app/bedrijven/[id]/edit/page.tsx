@@ -47,7 +47,7 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
             />
             <FormInput
               name='tagline'
-              type='text '
+              type='text'
               label='Slogan (max. 30 tekens)'
               defaultValue={property.tagline}
             />
@@ -56,24 +56,28 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
               type='text'
               label='Website'
               defaultValue={property.website ?? ''}
+              required={false}
             />
             <FormInput
               name='reservation'
               type='text'
               label='Reserveringslink'
               defaultValue={property.reservation ?? ''}
+              required={false}
             />
             <FormInput
               name='facebook'
               type='text'
               label='Facebook-pagina'
               defaultValue={property.facebook ?? ''}
+              required={false}
             />
             <FormInput
               name='instagram'
               type='text'
               label='Instagram-profiel'
               defaultValue={property.instagram ?? ''}
+              required={false}
             />
             <PriceInput defaultValue={property.price} />
             <CategoriesInput defaultValue={property.category} />
@@ -87,7 +91,7 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
             defaultValue={property.description}
           />
 
-          <h3 className='text-lg mt-10 mb-6 font-medium'>Amenities</h3>
+          <h3 className='text-lg mt-10 mb-6 font-medium'>Voorzieningen</h3>
           <AmenitiesInput defaultValue={defaultAmenities} />
           <SubmitButton text='bewerk bedrijf' className='mt-12' />
         </FormContainer>

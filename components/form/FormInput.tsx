@@ -7,10 +7,11 @@ type FormInputProps = {
   label?: string;
   defaultValue?: string;
   placeholder?: string;
+  required?: boolean;
 };
 
 function FormInput(props: FormInputProps) {
-  const { label, name, type, defaultValue, placeholder } = props;
+  const { label, name, type, defaultValue, placeholder, required } = props;
   return (
     <div className='mb-2'>
       <Label htmlFor={name} className='capitalize'>
@@ -22,7 +23,7 @@ function FormInput(props: FormInputProps) {
         type={type}
         defaultValue={defaultValue}
         placeholder={placeholder}
-        required
+        required={required}
       />
     </div>
   );

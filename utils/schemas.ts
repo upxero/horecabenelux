@@ -82,22 +82,18 @@ export const propertySchema = z.object({
   amenities: z.string(),
   website: z
   .string()
-  .url({ message: 'Voer een geldige website-URL in (bijv. https://voorbeeld.be).' })
   .optional(),
 
   reservation: z
     .string()
-    .url({ message: 'Voer een geldige reservatie-URL in (bijv. https://reserveren.jouwsite.be).' })
     .optional(),
 
   facebook: z
     .string()
-    .url({ message: 'Voer een geldige Facebook-URL in (bijv. https://facebook.com/jouwpagina).' })
     .optional(),
 
   instagram: z
     .string()
-    .url({ message: 'Voer een geldige Instagram-URL in (bijv. https://instagram.com/jouwpagina).' })
     .optional(),
 });
 
