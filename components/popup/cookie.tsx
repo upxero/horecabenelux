@@ -33,10 +33,9 @@ const CookiePopup = () => {
   return (
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-lg bg-white shadow-2xl rounded-xl p-6 z-50 border border-gray-200">
       <div className="flex flex-col items-center text-center space-y-4">
-        {/* Logo afbeelding vanuit de public/images map */}
         <div className="w-24">
           <Image
-            src="/images/horecabenelux-logo.png"
+            src="/images/horecabeneluxlogo.png"
             alt="Horeca Benelux Logo"
             width={40}
             height={40}
@@ -48,7 +47,7 @@ const CookiePopup = () => {
           <>
             <h2 className="text-lg font-semibold text-gray-800">We gebruiken cookies 🍪</h2>
             <p className="text-sm text-gray-600">
-              We gebruiken cookies om jouw ervaring te verbeteren. Door op "Alles accepteren" te klikken, ga je akkoord met ons gebruik van cookies.
+              We gebruiken cookies om uw ervaring te verbeteren. Door op &quot;Alles accepteren&quot; te klikken, gaat u akkoord met het gebruik van cookies.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mt-2 w-full">
               <button
@@ -69,12 +68,12 @@ const CookiePopup = () => {
           <>
             <h2 className="text-lg font-semibold text-gray-800">Cookievoorkeuren</h2>
             <p className="text-sm text-gray-600">
-              Kies welke cookies je wilt toestaan:
+              Kies welke cookies u wilt toestaan:
             </p>
 
             <div className="w-full space-y-4 text-sm text-left mt-4">
               <div className="flex items-center justify-between">
-                <span>Noodzakelijke cookies</span>
+                <span>Essentiële cookies</span>
                 <span className="text-green-600 font-medium">Altijd aan</span>
               </div>
 
