@@ -5,7 +5,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { Button } from '../ui/button';
-import { LuShare2 } from 'react-icons/lu';
+import { LuShare } from 'react-icons/lu';
 
 import {
   TwitterShareButton,
@@ -13,6 +13,8 @@ import {
   LinkedinShareButton,
   TwitterIcon,
   EmailIcon,
+  FacebookShareButton, 
+  FacebookIcon,
   LinkedinIcon,
 } from 'react-share';
 
@@ -29,7 +31,7 @@ function ShareButton({
     <Popover>
       <PopoverTrigger asChild>
         <Button variant='outline' size='icon' className='p-2'>
-          <LuShare2 />
+          <LuShare />
         </Button>
       </PopoverTrigger>
       <PopoverContent
@@ -38,6 +40,9 @@ function ShareButton({
         sideOffset={10}
         className='flex items-center gap-x-2 justify-center w-full'
       >
+        <FacebookShareButton url={shareLink} quote={name}>
+          <FacebookIcon size={32} round />
+        </FacebookShareButton>
         <TwitterShareButton url={shareLink} title={name}>
           <TwitterIcon size={32} round />
         </TwitterShareButton>
