@@ -12,7 +12,7 @@ function SubmitReview({ propertyId }: { propertyId: string }) {
   return (
     <div className='mt-8'>
       <Button onClick={() => setIsReviewFormVisible((prev) => !prev)}>
-        Leave a Review
+      Schrijf een review
       </Button>
       {isReviewFormVisible && (
         <Card className='p-8 mt-8'>
@@ -24,7 +24,7 @@ function SubmitReview({ propertyId }: { propertyId: string }) {
               labelText='feedback'
               defaultValue='Amazing place !!!'
             />
-            <SubmitButton text='Submit' className='mt-4' />
+            <SubmitButton text='Indienen' className='mt-4' />
           </FormContainer>
         </Card>
       )}
