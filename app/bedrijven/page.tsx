@@ -36,9 +36,9 @@ async function RentalsPage() {
         <TableHeader>
           <TableRow>
             <TableHead>Bedrijfsnaam</TableHead>
-            <TableHead>Gemiddelde Prijs</TableHead>
+            {/* <TableHead>Gemiddelde Prijs</TableHead>
             <TableHead>Kliks deze week</TableHead>
-            <TableHead>Aantal klikken</TableHead>
+            <TableHead>Aantal klikken</TableHead> */}
             <TableHead>Acties</TableHead>
           </TableRow>
         </TableHeader>
@@ -56,9 +56,9 @@ async function RentalsPage() {
                     {name}
                   </Link>
                 </TableCell>
-                <TableCell>{formatCurrency(price)}</TableCell>
+                {/* <TableCell>{formatCurrency(price)}</TableCell>
                 <TableCell>{totalNightsSum || 0}</TableCell>
-                <TableCell>{formatCurrency(orderTotalSum)}</TableCell>
+                <TableCell>{formatCurrency(orderTotalSum)}</TableCell> */}
 
                 <TableCell className='flex items-center gap-x-2'>
                   <Link href={`/bedrijven/${propertyId}/edit`}>
