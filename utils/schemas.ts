@@ -77,6 +77,7 @@ export const propertySchema = z.object({
       message: 'beschrijving moet tussen de 10 en 1000 woorden lang zijn.',
     }
   ),
+  address: z.string(),
   country: z.string(),
   amenities: z.string(),
   website: z

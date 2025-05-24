@@ -8,8 +8,8 @@ import FormInput from '@/components/form/FormInput';
 import CategoriesInput from '@/components/form/CategoriesInput';
 import PriceInput from '@/components/form/PriceInput';
 import TextAreaInput from '@/components/form/TextAreaInput';
+import AddressInput from '@/components/form/AddressInput';
 import CountriesInput from '@/components/form/CountriesInput';
-import CounterInput from '@/components/form/CounterInput';
 import AmenitiesInput from '@/components/form/AmenitiesInput';
 import { SubmitButton } from '@/components/form/Buttons';
 import { redirect } from 'next/navigation';
@@ -77,6 +77,7 @@ async function EditRentalPage({ params }: { params: { id: string } }) {
             />
             <PriceInput defaultValue={property.price} />
             <CategoriesInput defaultValue={property.category} />
+            <AddressInput defaultValue={property?.address ?? ''} />
             <CountriesInput defaultValue={property.country} />
           </div>
 

@@ -63,7 +63,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
           <Separator className='mt-4' />
           <Description description={property.description} />
           <Amenities amenities={property.amenities} />
-          <DynamicMap countryCode={property.country} />
+          <DynamicMap address={property.address} />
         </div>
         <div className='lg:col-span-4 flex flex-col items-center mt-6 lg:mt-0'>
           {/* website */}

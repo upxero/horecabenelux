@@ -5,9 +5,9 @@ import { SubmitButton } from '@/components/form/Buttons';
 import PriceInput from '@/components/form/PriceInput';
 import CategoriesInput from '@/components/form/CategoriesInput';
 import TextAreaInput from '@/components/form/TextAreaInput';
+import AddressInput from '@/components/form/AddressInput';
 import CountriesInput from '@/components/form/CountriesInput';
 import ImageInput from '@/components/form/ImageInput';
-import CounterInput from '@/components/form/CounterInput';
 import AmenitiesInput from '@/components/form/AmenitiesInput';
 function CreatePropertyPage() {
   return (
@@ -66,7 +66,8 @@ function CreatePropertyPage() {
             labelText='Beschrijving (10 - 1000 woorden)'
           />
           <div className='grid sm:grid-cols-2 gap-8 mt-4'>
-            <CountriesInput />
+          <AddressInput defaultValue="" />
+          <CountriesInput />
             <ImageInput />
           </div>
           <h3 className='text-lg mt-10 mb-6 font-medium'>Voorzieningen</h3>
