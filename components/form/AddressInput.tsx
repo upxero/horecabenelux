@@ -10,19 +10,22 @@ import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import { Label } from '@/components/ui/label';
 
-// Fix Leaflet marker issue
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: markerIcon2x.src,
-  iconUrl: markerIcon.src,
-  shadowUrl: markerShadow.src,
-});
-
 type Location = {
   display_name: string;
   lat: string;
   lon: string;
 };
+
+// Custom icon (in plaats van global prototype aan te passen)
+const customIcon = new L.Icon({
+  iconRetinaUrl: markerIcon2x.src,
+  iconUrl: markerIcon.src,
+  shadowUrl: markerShadow.src,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
 // Functie om huisnummer achter straatnaam te zetten
 function moveHouseNumberToStreet(address: string) {
@@ -135,7 +138,7 @@ export default function AddressInput({ defaultValue = '' }) {
             scrollWheelZoom={false}
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[coords.lat, coords.lng]}>
+            <Marker position={[coords.lat, coords.lng]} icon={customIcon}>
               <Popup>{address}</Popup>
             </Marker>
           </MapContainer>
