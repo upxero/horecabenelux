@@ -5,6 +5,7 @@ import Navbar from '@/components/navbar/Navbar';
 import Providers from './providers';
 import { ClerkProvider } from '@clerk/nextjs';
 import { nlNL } from '@clerk/localizations'
+import CookiePopup from '@/components/popup/cookie';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({
           <Providers>
             <Navbar />
             <main className='container py-10'>{children}</main>
+            <CookiePopup />
           </Providers>
         </body>
       </html>
