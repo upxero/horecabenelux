@@ -2,6 +2,7 @@ import NavSearch from './NavSearch';
 import LinksDropdown from './LinksDropdown';
 import DarkMode from './DarkMode';
 import Logo from './Logo';
+import AddCompany from './AddCompany';
 
 function Navbar() {
   return (
@@ -11,6 +12,7 @@ function Navbar() {
         <NavSearch />
         <div className='flex gap-4 items-center'>
           <DarkMode />
+          <AddCompany />
           <LinksDropdown />
         </div>
       </div>
