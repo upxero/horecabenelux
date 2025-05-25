@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaYoutube, FaSearchPlus } from 'react-icons/fa';
+import { FiPlus } from 'react-icons/fi';
+import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
 
 export default function Banner() {
   const [followers, setFollowers] = useState(0);
@@ -21,6 +23,9 @@ export default function Banner() {
     return () => clearInterval(interval);
   }, []);
 
+  const buttonBaseClasses =
+    'font-semibold px-6 py-3 rounded-full shadow transition flex items-center gap-2 border';
+
   return (
     <section className="relative bg-primary text-white py-20 px-6 rounded-2xl overflow-hidden shadow-xl mb-12">
       {/* Achtergrond-effect */}
@@ -32,22 +37,40 @@ export default function Banner() {
           Zet jouw horecazaak in de kijker!
         </h1>
         <p className="text-lg md:text-xl mb-6">
-          Word lid vanaf slechts <strong>€4,99 / maand</strong> – incl. btw. <br />
+          Word lid vanaf slechts <strong>€4,99 / maand</strong> <br />
           <span className="text-sm text-white/90">Eerste maand gratis. Meer zichtbaarheid. Meer omzet.</span>
         </p>
 
         <div className="flex justify-center gap-4 flex-wrap mb-8">
-          <a
-            href="/bedrijven/create"
-            className="bg-white text-primary font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition flex items-center gap-2"
-          >
-            ➕ Voeg jouw zaak toe
-          </a>
+          {/* Als ingelogd, normale link */}
+          <SignedIn>
+            <a
+              href="/bedrijven/create"
+              className={`${buttonBaseClasses} bg-[#E00DDF] border-[#F54D5B] text-white hover:bg-[#F54D5B]`}
+            >
+              <FiPlus className="text-xl" />
+              Voeg jouw zaak toe
+            </a>
+          </SignedIn>
+
+          {/* Als uitgelogd, SignIn modal */}
+          <SignedOut>
+            <SignInButton mode="modal" redirectUrl="/bedrijven/create">
+              <button
+                className={`${buttonBaseClasses} bg-[#E00DDF] border-[#F54D5B] text-white hover:bg-[#F54D5B]`}
+              >
+                <FiPlus className="text-xl" />
+                Voeg jouw zaak toe
+              </button>
+            </SignInButton>
+          </SignedOut>
+
           <a
             href="#categories-list"
-            className="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-primary transition flex items-center gap-2"
+            className={`${buttonBaseClasses} border-[#F54D5B] text-white hover:bg-[#F54D5B] flex items-center gap-2`}
           >
-            🔍 Ontdek horecazaken
+            <FaSearchPlus className="text-xl" />
+            Ontdek horecazaken
           </a>
         </div>
 
@@ -60,7 +83,7 @@ export default function Banner() {
               aria-label="Facebook"
               className="hover:text-white/70 transition"
             >
-              <FaFacebookF className="text-2xl" />
+              <FaFacebookF className="text-3xl" style={{ color: '#1877F2' }} />
             </a>
             <a
               href="https://www.instagram.com/horecadebenelux"
@@ -69,7 +92,10 @@ export default function Banner() {
               aria-label="Instagram"
               className="hover:text-white/70 transition"
             >
-              <FaInstagram className="text-2xl" />
+              <FaInstagram
+                className="text-3xl"
+                style={{ color: '#E4405F' }}
+              />
             </a>
             <a
               href="https://www.youtube.com/@HorecaBenelux-youtube"
@@ -78,10 +104,10 @@ export default function Banner() {
               aria-label="YouTube"
               className="hover:text-white/70 transition"
             >
-              <FaYoutube className="text-2xl" />
+              <FaYoutube className="text-3xl" style={{ color: '#FF0000' }} />
             </a>
           </div>
-          <div className="text-white/90">
+          <div className="text-lg md:text-xl mb-6">
             <span className="font-semibold text-white">{followers.toLocaleString()}+</span> volgers op social media
           </div>
         </div>
@@ -89,3 +115,4 @@ export default function Banner() {
     </section>
   );
 }
+
