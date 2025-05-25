@@ -33,7 +33,7 @@ const CookiePopup = () => {
   return (
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-lg bg-white shadow-2xl rounded-xl p-6 z-50 border border-gray-200">
       <div className="flex flex-col items-center text-center space-y-4">
-        <div className="w-24">
+        <div className="flex justify-center">
           <Image
             src="/horecabenelux-logo.png"
             alt="Horeca Benelux Logo"
