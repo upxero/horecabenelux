@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaYoutube, FaSearchPlus } from 'react-icons/fa';
 import { FiPlus } from 'react-icons/fi';
 import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
@@ -38,27 +39,26 @@ export default function Banner() {
         </h1>
         <p className="text-lg md:text-xl mb-6">
           Word lid vanaf slechts <strong>€4,99 / maand</strong> <br />
-          <span className="text-sm text-white/90">Eerste maand gratis. Meer zichtbaarheid. Meer omzet.</span>
+          <span className="text-sm text-white/90">
+            Eerste maand gratis. Meer zichtbaarheid. Meer omzet.
+          </span>
         </p>
 
         <div className="flex justify-center gap-4 flex-wrap mb-8">
-          {/* Als ingelogd, normale link */}
+          {/* Als ingelogd, normale Link */}
           <SignedIn>
-            <a
-              href="/bedrijven/create"
-              className={`${buttonBaseClasses} bg-[#E00DDF] border-[#F54D5B] text-white hover:bg-[#F54D5B]`}
-            >
-              <FiPlus className="text-xl" />
-              Voeg jouw zaak toe
-            </a>
+            <Link href="/bedrijven/create">
+              <button className={`${buttonBaseClasses} bg-[#E00DDF] border-[#F54D5B] text-white hover:bg-[#F54D5B]`}>
+                <FiPlus className="text-xl" />
+                Voeg jouw zaak toe
+              </button>
+            </Link>
           </SignedIn>
 
           {/* Als uitgelogd, SignIn modal */}
           <SignedOut>
-          <SignInButton mode="modal" afterSignInUrl="/bedrijven/create">
-              <button
-                className={`${buttonBaseClasses} bg-[#E00DDF] border-[#F54D5B] text-white hover:bg-[#F54D5B]`}
-              >
+            <SignInButton mode="modal">
+              <button className={`${buttonBaseClasses} bg-[#E00DDF] border-[#F54D5B] text-white hover:bg-[#F54D5B]`}>
                 <FiPlus className="text-xl" />
                 Voeg jouw zaak toe
               </button>
@@ -67,7 +67,7 @@ export default function Banner() {
 
           <a
             href="#categories-list"
-            className={`${buttonBaseClasses} border-[#F54D5B] text-white hover:bg-[#F54D5B] flex items-center gap-2`}
+            className={`${buttonBaseClasses} border-[#F54D5B] text-white hover:bg-[#F54D5B]`}
           >
             <FaSearchPlus className="text-xl" />
             Ontdek horecazaken
@@ -92,10 +92,7 @@ export default function Banner() {
               aria-label="Instagram"
               className="hover:text-white/70 transition"
             >
-              <FaInstagram
-                className="text-3xl"
-                style={{ color: '#E4405F' }}
-              />
+              <FaInstagram className="text-3xl" style={{ color: '#E4405F' }} />
             </a>
             <a
               href="https://www.youtube.com/@HorecaBenelux-youtube"
@@ -115,4 +112,3 @@ export default function Banner() {
     </section>
   );
 }
-
