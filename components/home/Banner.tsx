@@ -115,6 +115,13 @@ export default function Banner() {
           </div>
         </div>
       </div>
+
+      {/* Afbeelding rechtsonder */}
+      <img
+        src="/images/chef-reading-book.png"
+        alt="Chef leest een boek"
+        className="absolute bottom-0 right-0 w-32 md:w-48 lg:w-60 object-contain z-10 pointer-events-none"
+      />
     </section>
   );
 }
