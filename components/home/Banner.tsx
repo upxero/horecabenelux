@@ -120,7 +120,7 @@ export default function Banner() {
       <img
         src="/images/chef-reading-book.png"
         alt="Chef leest een boek"
-        className="absolute bottom-0 right-0 w-32 md:w-48 lg:w-60 object-contain z-10 pointer-events-none"
+        className="absolute bottom-[-10px] md:bottom-0 right-0 w-32 md:w-48 lg:w-60 object-contain z-10 pointer-events-none"
       />
     </section>
   );
