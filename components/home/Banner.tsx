@@ -78,13 +78,7 @@ export default function Banner() {
           </a>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 flex-wrap text-sm max-w-3xl mx-auto md:mx-0">
-          <div className="text-lg md:text-xl text-left md:text-center w-full md:w-auto">
-            <span className="font-semibold text-white block md:inline">{followers.toLocaleString()}+</span>{' '}
-            <span className="block md:inline">volgers op</span>{' '}
-            <span className="block md:inline">social media</span>
-          </div>
-
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 flex-wrap text-sm">
           <div className="flex items-center gap-4">
             <a
               href="https://www.facebook.com/Partyeventsaruba"
@@ -114,6 +108,11 @@ export default function Banner() {
               <FaYoutube className="text-3xl" />
             </a>
           </div>
+
+          <div className="text-lg md:text-xl">
+            <span className="font-semibold text-white">{followers.toLocaleString()}+</span>{' '}
+            volgers op social media
+          </div>
         </div>
       </div>
 
@@ -121,7 +120,7 @@ export default function Banner() {
       <img
         src="/images/chef-reading-book.png"
         alt="Chef leest een boek"
-        className="absolute bottom-[-20px] md:bottom-0 right-0 w-40 md:w-52 lg:w-64 object-contain z-10 pointer-events-none"
+        className="absolute bottom-[-25px] md:bottom-0 right-0 w-38 md:w-50 lg:w-65 object-contain z-10 pointer-events-none"
       />
     </section>
   );
