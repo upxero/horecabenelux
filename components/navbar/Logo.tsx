@@ -12,7 +12,7 @@ function Logo() {
       <Link href="/">
         <Image
           src="/horecabenelux-logo.png"
-          alt="Logo"
+          alt="Horeca Benelux Logo"
           width={75}  
           height={75} 
           priority
