@@ -55,7 +55,7 @@ export default function Banner() {
 
           {/* Als uitgelogd, SignIn modal */}
           <SignedOut>
-            <SignInButton mode="modal" redirectUrl="/bedrijven/create">
+          <SignInButton mode="modal" afterSignInUrl="/bedrijven/create">
               <button
                 className={`${buttonBaseClasses} bg-[#E00DDF] border-[#F54D5B] text-white hover:bg-[#F54D5B]`}
               >
