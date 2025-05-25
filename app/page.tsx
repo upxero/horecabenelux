@@ -11,11 +11,12 @@ function HomePage({
   return (
     <section>
       <Banner />
-      <CategoriesList
-        id="categories-list"
-        category={searchParams.category}
-        search={searchParams.search}
-      />
+      <section id="categories-list">
+        <CategoriesList
+          category={searchParams.category}
+          search={searchParams.search}
+        />
+      </section>
       <Suspense fallback={<LoadingCards />}>
         <PropertiesContainer
           category={searchParams.category}
