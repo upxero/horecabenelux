@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/navbar/Navbar';
+import Footer from '@/components/footer/Footer';
 import Providers from './providers';
 import { ClerkProvider } from '@clerk/nextjs';
 import { nlNL } from '@clerk/localizations'
@@ -25,6 +26,7 @@ export default function RootLayout({
           <Providers>
             <Navbar />
             <main className='container py-10'>{children}</main>
+            <Footer />
             <CookiePopup />
           </Providers>
         </body>
