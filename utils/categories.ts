@@ -1,7 +1,20 @@
 import { IconType } from 'react-icons';
-import { FaUtensils, FaCoffee, FaTruck, FaBeer, FaBed, FaIceCream, FaConciergeBell, FaGlassCheers, FaStoreAlt } from 'react-icons/fa';
+import {
+  FaUtensils,
+  FaCoffee,
+  FaTruck,
+  FaBeer,
+  FaBed,
+  FaIceCream,
+  FaConciergeBell,
+  FaGlassCheers,
+  FaStoreAlt,
+  FaDrumstickBite,
+  FaHamburger,
+  FaFish,
+} from 'react-icons/fa';
 import { MdLocalBar } from 'react-icons/md';
-import { GiCakeSlice } from 'react-icons/gi';
+import { GiCakeSlice, GiMeat } from 'react-icons/gi';
 import { TbBuildingCottage } from 'react-icons/tb';
 
 type Category = {
@@ -17,9 +30,13 @@ export type CategoryLabel =
   | 'hotel'
   | 'icecream'
   | 'catering'
-  | 'bakery'
+  | 'traiteur'
+  | 'bakkerij'
   | 'drinks'
-  | 'delishop';
+  | 'delishop'
+  | 'snackbar'
+  | 'slagerij'
+  | 'viswinkel';
 
 export const categories: Category[] = [
   {
@@ -51,7 +68,11 @@ export const categories: Category[] = [
     icon: FaConciergeBell,
   },
   {
-    label: 'bakery',
+    label: 'traiteur',
+    icon: FaConciergeBell,
+  },
+  {
+    label: 'bakkerij',
     icon: GiCakeSlice,
   },
   {
@@ -61,5 +82,17 @@ export const categories: Category[] = [
   {
     label: 'delishop',
     icon: FaStoreAlt,
+  },
+  {
+    label: 'snackbar',
+    icon: FaHamburger,
+  },
+  {
+    label: 'slagerij',
+    icon: GiMeat,
+  },
+  {
+    label: 'viswinkel',
+    icon: FaFish,
   },
 ];
