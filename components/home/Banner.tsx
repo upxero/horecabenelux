@@ -28,7 +28,12 @@ export default function Banner() {
     'font-semibold px-6 py-3 rounded-full shadow transition flex items-center gap-2 border text-black border-black';
 
   return (
-    <section className="relative bg-primary text-white py-20 px-6 rounded-2xl overflow-hidden shadow-xl mb-12">
+    <section
+      className="relative text-white py-20 px-6 rounded-2xl overflow-hidden shadow-xl mb-12"
+      style={{
+        background: 'linear-gradient(135deg, #f57c00, #f06292, #8e24aa)',
+      }}
+    >
       {/* Achtergrond-effect */}
       <div className="absolute top-[-60px] left-[-60px] w-[240px] h-[240px] bg-white opacity-10 rounded-full blur-3xl z-0"></div>
       <div className="absolute bottom-[-60px] right-[-60px] w-[240px] h-[240px] bg-white opacity-10 rounded-full blur-3xl z-0"></div>
@@ -45,7 +50,6 @@ export default function Banner() {
         </p>
 
         <div className="flex justify-center gap-4 flex-wrap mb-8">
-          {/* Als ingelogd, toon link */}
           <SignedIn>
             <Link href="/bedrijven/create">
               <button
@@ -57,7 +61,6 @@ export default function Banner() {
             </Link>
           </SignedIn>
 
-          {/* Als niet ingelogd, toon modal login */}
           <SignedOut>
             <SignInButton mode="modal">
               <button
