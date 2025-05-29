@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaYoutube, FaSearchPlus } from 'react-icons/fa';
 import { FiPlus } from 'react-icons/fi';
+import { FaCheck } from 'react-icons/fa';
 import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
 
 export default function Banner() {
@@ -48,7 +49,16 @@ export default function Banner() {
             Eerste maand gratis. Meer zichtbaarheid. Meer omzet.
           </span>
         </p>
-
+        <ul className="text-white/90 text-sm space-y-2 mb-6">
+          <li className="flex items-start gap-2">
+            <FaCheck className="text-green-400 mt-0.5" />
+            <span>Ontvang maandelijkse rapportages over klikken & leads</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <FaCheck className="text-green-400 mt-0.5" />
+            <span>Laat klanten reviews plaatsen op jouw pagina</span>
+          </li>
+        </ul>
         <div className="flex justify-center gap-4 flex-wrap mb-8">
           <SignedIn>
             <Link href="/bedrijven/create">
