@@ -7,7 +7,7 @@ import Providers from './providers';
 import { ClerkProvider } from '@clerk/nextjs';
 import { nlNL } from '@clerk/localizations'
 import CookiePopup from '@/components/popup/cookie';
-import MessengerButton from "@/components/MessengerButton";
+import MessengerButton from "@/components/socials/MessengerButton";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
