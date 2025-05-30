@@ -50,8 +50,28 @@ const CompanyDetailsPage = () => {
       </div>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">Contactinformatie:</h2>
-      <ul className="mb-6">
-        <li><strong>E-mail:</strong> info@horecabenelux.com / support@horecabenelux.com / dsa-contact@horecabenelux.com</li>
+      <ul className="mb-6 space-y-2">
+        <li>
+          <strong>E-mail algemeen:</strong>{' '}
+          <a href="mailto:info@horecabenelux.com" className="text-blue-600 underline">
+            info@horecabenelux.com
+          </a>{' '}
+          – Voor algemene vragen, samenwerkingen of perscontact.
+        </li>
+        <li>
+          <strong>Technische ondersteuning:</strong>{' '}
+          <a href="mailto:support@horecabenelux.com" className="text-blue-600 underline">
+            support@horecabenelux.com
+          </a>{' '}
+          – Voor technische problemen, bugs, hulp bij het gebruik van het platform of vragen over facturatie.
+        </li>
+        <li>
+          <strong>DSA-contactpunt:</strong>{' '}
+          <a href="mailto:dsa-contact@horecabenelux.com" className="text-blue-600 underline">
+            dsa-contact@horecabenelux.com
+          </a>{' '}
+          – Specifiek e-mailadres voor toezichthouders en autoriteiten i.v.m. de Digital Services Act.
+        </li>
         <li><strong>Telefoon NL:</strong> +31 97 010268675</li>
         <li><strong>Telefoon BE:</strong> +32 491 10 01 43</li>
       </ul>
@@ -71,3 +91,4 @@ const CompanyDetailsPage = () => {
 };
 
 export default CompanyDetailsPage;
+
