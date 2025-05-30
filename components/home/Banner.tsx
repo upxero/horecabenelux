@@ -44,9 +44,9 @@ export default function Banner() {
           Zet jouw horecazaak in de kijker!
         </h1>
         <p className="text-lg md:text-xl mb-6 text-white">
-          Word lid vanaf slechts <strong>€4,99 / maand</strong> <br />
+          Eerste maand gratis. Meer zichtbaarheid. Meer omzet.
           <span className="text-sm text-white/90">
-            Eerste maand gratis. Meer zichtbaarheid. Meer omzet.
+          Word lid vanaf slechts <strong>€4,99 / maand</strong> <br />
           </span>
         </p>
         <ul className="text-white/90 text-sm space-y-2 mb-6">
