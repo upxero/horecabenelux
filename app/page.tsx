@@ -24,7 +24,9 @@ function HomePage({
           search={searchParams.search}
         />
       </Suspense>
+      <section>
       <Banner /> 
+      </section>
     </section>
   );
 }

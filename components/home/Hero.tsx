@@ -1,10 +1,7 @@
 export default function Hero() {
-  const buttonBaseClasses =
-    'font-semibold px-6 py-3 rounded-full shadow transition flex items-center gap-2 border text-black border-black bg-transparent hover:bg-white hover:text-black';
-
   return (
     <section
-      className="relative text-white py-20 px-6 rounded-2xl overflow-hidden shadow-xl mb-12"
+      className="relative text-white py-10 px-6 rounded-2xl overflow-hidden shadow-xl mb-12"
       style={{
         background: 'linear-gradient(135deg, #f57c00, #f06292, #8e24aa)',
       }}
@@ -17,11 +14,10 @@ export default function Hero() {
         <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
           Hét platform voor iedereen met een passie voor horeca
         </h1>
-        <p className="text-lg md:text-xl mb-6 text-white">
+        <p className="text-lg md:text-xl text-white">
           Ontdek, beleef en reserveer jouw favoriete horecazaak in België, Nederland of Luxemburg.
         </p>
       </div>
     </section>
   );
 }
-
