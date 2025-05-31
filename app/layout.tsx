@@ -15,27 +15,19 @@ export const metadata: Metadata = {
   description: 'Zoek, vind en plaats horecazaken, jobs, overnames en meer op Horeca Benelux – hét platform voor horeca in België, Nederland en Luxemburg.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='nl' suppressHydrationWarning>
+    <html lang="nl" suppressHydrationWarning>
       <body className={inter.className}>
-        {/* Providers blijft erbuiten, tenzij die zelf Clerk nodig heeft */}
-        <Providers>
-          {/* ClerkProvider alleen rond dingen die het nodig hebben */}
-          <ClerkProvider localization={nlNL}>
+        <ClerkProvider localization={nlNL}>
+          <Providers>
             <Navbar />
-            <main className='container py-10'>{children}</main>
-          </ClerkProvider>
-
-          {/* Deze componenten renderen onafhankelijk van Clerk */}
-          <Footer />
-          <MessengerButton />
-          <CookiePopup />
-        </Providers>
+            <main className="container py-10">{children}</main>
+          </Providers>
+        </ClerkProvider>
+        <Footer />
+        <MessengerButton />
+        <CookiePopup />
       </body>
     </html>
   );
