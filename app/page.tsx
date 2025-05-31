@@ -17,7 +17,6 @@ function HomePage({
           category={searchParams.category}
           search={searchParams.search}
         />
-       <Banner /> 
       </section>
       <Suspense fallback={<LoadingCards />}>
         <PropertiesContainer
@@ -25,6 +24,7 @@ function HomePage({
           search={searchParams.search}
         />
       </Suspense>
+      <Banner /> 
     </section>
   );
 }

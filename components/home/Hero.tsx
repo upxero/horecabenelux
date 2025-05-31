@@ -1,25 +1,27 @@
-import Link from 'next/link';
-import { FaSearchPlus } from 'react-icons/fa';
-
 export default function Hero() {
-  const buttonClasses =
+  const buttonBaseClasses =
     'font-semibold px-6 py-3 rounded-full shadow transition flex items-center gap-2 border text-black border-black bg-transparent hover:bg-white hover:text-black';
 
   return (
-    <section className="text-center py-12 px-4 mb-12">
-      <h1 className="text-3xl md:text-4xl font-bold mb-4">
-        Hét platform voor iedereen met een passie voor horeca
-      </h1>
-      <p className="text-lg text-gray-700 mb-6">
-        Ontdek, beleef en reserveer jouw favoriete horecazaak in België, Nederland of Luxemburg.
-      </p>
+    <section
+      className="relative text-white py-20 px-6 rounded-2xl overflow-hidden shadow-xl mb-12"
+      style={{
+        background: 'linear-gradient(135deg, #f57c00, #f06292, #8e24aa)',
+      }}
+    >
+      {/* Achtergrond effecten */}
+      <div className="absolute top-[-60px] left-[-60px] w-[240px] h-[240px] bg-white opacity-10 rounded-full blur-3xl z-0"></div>
+      <div className="absolute bottom-[-60px] right-[-60px] w-[240px] h-[240px] bg-white opacity-10 rounded-full blur-3xl z-0"></div>
 
-      <Link href="#categories-list">
-        <button className={buttonClasses}>
-          <FaSearchPlus className="text-xl" />
-          Ontdek horecazaken
-        </button>
-      </Link>
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+          Hét platform voor iedereen met een passie voor horeca
+        </h1>
+        <p className="text-lg md:text-xl mb-6 text-white">
+          Ontdek, beleef en reserveer jouw favoriete horecazaak in België, Nederland of Luxemburg.
+        </p>
+      </div>
     </section>
   );
 }
+
