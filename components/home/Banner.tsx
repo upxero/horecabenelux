@@ -30,7 +30,7 @@ export default function Banner() {
 
   return (
     <section
-      className="relative text-white py-20 px-6 rounded-2xl overflow-hidden shadow-xl mb-12"
+      className="relative text-white py-20 px-6 rounded-2xl overflow-hidden shadow-xl mb-8"
       style={{
         background: 'linear-gradient(135deg, #f57c00, #f06292, #8e24aa)',
       }}

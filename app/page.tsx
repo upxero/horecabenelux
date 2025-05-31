@@ -24,7 +24,7 @@ function HomePage({
           search={searchParams.search}
         />
       </Suspense>
-      <section>
+      <section className="mt-20"> 
       <Banner /> 
       </section>
     </section>
