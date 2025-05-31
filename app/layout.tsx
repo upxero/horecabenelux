@@ -21,18 +21,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider localization={nlNL}>
-      <html lang='nl' suppressHydrationWarning>
-        <body className={inter.className}>
-          <Providers>
+    <html lang='nl' suppressHydrationWarning>
+      <body className={inter.className}>
+        {/* Providers blijft erbuiten, tenzij die zelf Clerk nodig heeft */}
+        <Providers>
+          {/* ClerkProvider alleen rond dingen die het nodig hebben */}
+          <ClerkProvider localization={nlNL}>
             <Navbar />
             <main className='container py-10'>{children}</main>
-            <Footer />
-            <MessengerButton />
-            <CookiePopup />
-          </Providers>
-        </body>
-      </html>
-    </ClerkProvider>
+          </ClerkProvider>
+
+          {/* Deze componenten renderen onafhankelijk van Clerk */}
+          <Footer />
+          <MessengerButton />
+          <CookiePopup />
+        </Providers>
+      </body>
+    </html>
   );
 }
+
