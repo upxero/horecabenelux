@@ -15,7 +15,7 @@ export default function Hero() {
           Hét platform voor iedereen met een passie voor horeca
         </h1>
         <p className="text-lg md:text-xl text-white">
-          Ontdek, beleef en reserveer jouw favoriete horecazaak in België, Nederland of Luxemburg.
+          Reserveer, ontdek en beoordeel jouw favoriete horecazaken in de Benelux.
         </p>
       </div>
     </section>
