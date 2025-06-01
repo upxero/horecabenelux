@@ -25,7 +25,7 @@ export default function Footer() {
 
         {/* Kolom 2 */}
         <div>
-          <h4 className="font-semibold text-gray-800 mb-2">Voor bezoekers</h4>
+          <h4 className="font-semibold text-gray-800 mb-2">Voor horecaliefhebbers</h4>
           <ul className="space-y-1">
             <li><a href="/in-de-buurt" className="hover:underline">Horecazaken in de buurt</a></li>
             <li><a href="/faq" className="hover:underline">Veelgestelde vragen</a></li>
