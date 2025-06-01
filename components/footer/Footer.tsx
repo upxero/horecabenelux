@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
         {/* Logo + slogan */}
         <div>
-          <img src="/logo.png" alt="Horeca Benelux" className="w-40 mb-3" />
+          <img src="/horecabenelux-logo.png" alt="Horeca Benelux" className="w-40 mb-3" />
           <p className="text-gray-700">
             Hét platform voor iedereen met een passie voor horeca
           </p>
@@ -62,13 +62,13 @@ export default function Footer() {
           <a href="/bedrijfsgegevens" className="hover:underline">Bedrijfsgegevens</a>
         </div>
         <div className="flex gap-4 text-gray-600">
-          <a href="https://facebook.com/..." target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+          <a href="https://www.facebook.com/Partyeventsaruba" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
             <FaFacebook size={20} />
           </a>
-          <a href="https://instagram.com/..." target="_blank" rel="noopener noreferrer" className="hover:text-pink-500">
+          <a href="https://www.instagram.com/horecadebenelux" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500">
             <FaInstagram size={20} />
           </a>
-          <a href="https://youtube.com/..." target="_blank" rel="noopener noreferrer" className="hover:text-red-600">
+          <a href="https://www.youtube.com/@HorecaBenelux-youtube" target="_blank" rel="noopener noreferrer" className="hover:text-red-600">
             <FaYoutube size={20} />
           </a>
         </div>
