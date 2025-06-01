@@ -17,9 +17,9 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-gray-800 mb-2">Over</h4>
           <ul className="space-y-1">
+            <li><a href="/ontstaan" className="hover:underline">Ontstaan Horeca Benelux</a></li>
             <li><a href="/over" className="hover:underline">Over Ons</a></li>
             <li><a href="/contact" className="hover:underline">Contact</a></li>
-            <li><a href="/ontstaan" className="hover:underline">Ontstaan Horeca Benelux</a></li>
           </ul>
         </div>
 
