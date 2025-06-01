@@ -1,17 +1,77 @@
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-300 mt-12 pt-4 pb-6 text-center text-sm text-gray-600">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
-        <span>© {new Date().getFullYear()} Horeca Benelux</span>
-        <a href="/privacy" className="hover:underline">
-          PrivacyVoorwaarden
-        </a>
-        <a href="/algemene-voorwaarden" className="hover:underline">
-          AlgemeneVoorwaarden
-        </a>
-        <a href="/bedrijfsgegevens" className="hover:underline">
-          Bedrijfsgegevens
-        </a>
+    <footer className="border-t border-gray-300 mt-12 pt-10 pb-6 text-sm text-gray-600 bg-gray-50">
+      {/* Bovenste sectie met logo, links en nieuwsbrief */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
+        {/* Logo + slogan */}
+        <div>
+          <img src="/logo.png" alt="Horeca Benelux" className="w-40 mb-3" />
+          <p className="text-gray-700">
+            Hét platform voor iedereen met een passie voor horeca
+          </p>
+        </div>
+
+        {/* Kolom 1 */}
+        <div>
+          <h4 className="font-semibold text-gray-800 mb-2">Over</h4>
+          <ul className="space-y-1">
+            <li><a href="/over" className="hover:underline">Over Ons</a></li>
+            <li><a href="/contact" className="hover:underline">Contact</a></li>
+            <li><a href="/ontstaan" className="hover:underline">Ontstaan Horeca Benelux</a></li>
+          </ul>
+        </div>
+
+        {/* Kolom 2 */}
+        <div>
+          <h4 className="font-semibold text-gray-800 mb-2">Voor bezoekers</h4>
+          <ul className="space-y-1">
+            <li><a href="/in-de-buurt" className="hover:underline">Horecazaken in de buurt</a></li>
+            <li><a href="/faq" className="hover:underline">Veelgestelde vragen</a></li>
+            <li><a href="/registreer" className="hover:underline">Ben jij een horecazaak?</a></li>
+          </ul>
+        </div>
+
+        {/* Kolom 3 - Nieuwsbrief */}
+        <div>
+          <h4 className="font-semibold text-gray-800 mb-2">Nieuwsbrief</h4>
+          <p className="text-gray-600 text-sm mb-2">Blijf op de hoogte van het laatste horecanieuws</p>
+          <form className="flex flex-col sm:flex-row gap-2">
+            <input
+              type="email"
+              placeholder="Jouw e-mailadres"
+              className="w-full sm:w-auto flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#B75BAA]"
+            />
+            <button
+              type="submit"
+              className="bg-[#B75BAA] text-white px-4 py-2 rounded-md text-sm hover:bg-[#a84c9b]"
+            >
+              Abonneren
+            </button>
+          </form>
+        </div>
+      </div>
+
+      {/* Onderste rij met privacy links en social media */}
+      <div className="max-w-6xl mx-auto mt-10 px-4 flex flex-col md:flex-row justify-between items-center border-t border-gray-300 pt-4 gap-4">
+        <div className="flex flex-col md:flex-row items-center gap-4">
+          <span>© {new Date().getFullYear()} Horeca Benelux</span>
+          <a href="/privacy" className="hover:underline">PrivacyVoorwaarden</a>
+          <a href="/algemene-voorwaarden" className="hover:underline">AlgemeneVoorwaarden</a>
+          <a href="/bedrijfsgegevens" className="hover:underline">Bedrijfsgegevens</a>
+        </div>
+        <div className="flex gap-4 text-gray-600">
+          <a href="https://facebook.com/..." target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+            <FaFacebook size={20} />
+          </a>
+          <a href="https://instagram.com/..." target="_blank" rel="noopener noreferrer" className="hover:text-pink-500">
+            <FaInstagram size={20} />
+          </a>
+          <a href="https://youtube.com/..." target="_blank" rel="noopener noreferrer" className="hover:text-red-600">
+            <FaYoutube size={20} />
+          </a>
+        </div>
       </div>
     </footer>
   );
