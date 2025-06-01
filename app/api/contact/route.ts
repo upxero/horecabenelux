@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+console.log("🟢 Contact API route geladen"); // <- Voeg dit toe
+
 export async function POST(req: Request) {
+  console.log("📩 POST-verzoek ontvangen"); // <- Log POST-verzoek
   const { name, email, message } = await req.json();
 
   const transporter = nodemailer.createTransport({
