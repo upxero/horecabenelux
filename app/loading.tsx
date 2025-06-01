@@ -1,9 +1,11 @@
 'use client';
 
-export default function Loading() {
+import React from 'react';
+
+const Loading: React.FC = () => {
   return (
     <div className="loader-overlay">
-      <div className="loader-spinner"></div>
+      <div className="loader-spinner" />
 
       <style jsx>{`
         .loader-overlay {
@@ -29,10 +31,17 @@ export default function Loading() {
         }
 
         @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
         }
       `}</style>
     </div>
   );
-}
+};
+
+export default Loading;
+
