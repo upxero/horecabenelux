@@ -9,6 +9,7 @@ export default function RouteChangeLoader() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    console.log('Path changed to:', pathname);
     // Start loading
     setLoading(true);
 
