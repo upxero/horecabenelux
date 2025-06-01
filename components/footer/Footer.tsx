@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
         {/* Logo + slogan */}
         <div>
-          <img src="/horecabenelux-logo.png" alt="Horeca Benelux" className="w-32 mb-3" />
+          <img src="/horecabenelux-logo.png" alt="Horeca Benelux" className="w-24 mb-3" />
           <p className="font-semibold text-gray-800">
             Hét platform voor iedereen met een passie voor horeca
           </p>
