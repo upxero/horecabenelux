@@ -49,7 +49,7 @@ const ContactForm: React.FC = () => {
   };
 
   if (isSubmitted) {
-    return <p className="text-green-600">Bedankt! We nemen snel contact met je op.</p>;
+    return <p className="text-green-600 text-center">Bedankt! We nemen snel contact met je op.</p>;
   }
 
   return (
