@@ -760,16 +760,28 @@ export async function deletePropertyAction(formData: FormData) {
 
   const propertyId = formData.get('propertyId') as string;
 
-  if (!propertyId) throw new Error('Geen property ID meegegeven');
+  if (!propertyId) {
+    throw new Error('Geen bedrijf ID meegegeven');
+  }
 
   try {
+    const property = await db.property.findUnique({
+      where: { id: propertyId },
+    });
+
+    if (!property) {
+      throw new Error(`Geen bedrijf gevonden met ID: ${propertyId}`);
+    }
+
     await db.property.delete({
       where: { id: propertyId },
     });
 
-    revalidatePath('/admin'); // ververst de admin pagina
-    return { message: 'Property succesvol verwijderd' };
+    revalidatePath('/admin');
+    return { message: 'Bedrijf succesvol verwijderd' };
   } catch (error) {
-    throw new Error('Verwijderen mislukt: ' + (error as Error).message);
+    console.error('Verwijderfout:', error); // ← wordt zichtbaar in terminal/log
+    throw new Error('Verwijderen mislukt. Probeer het opnieuw of controleer het ID.');
   }
 }
+

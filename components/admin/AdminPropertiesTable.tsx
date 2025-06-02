@@ -8,7 +8,7 @@ export default async function AdminPropertiesTable() {
 
   return (
     <div className="mt-10">
-      <h2 className="text-xl font-bold mb-4">Alle eigendommen</h2>
+      <h2 className="text-xl font-bold mb-4">Alle bedrijven</h2>
       <ul className="space-y-4">
         {properties.map((property) => (
           <li key={property.id} className="border p-4 rounded flex justify-between items-center">
