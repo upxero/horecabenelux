@@ -739,7 +739,6 @@ export const fetchReservationStats = async () => {
   };
 };
 
-// Haal alle properties op, voor admin
 export const fetchAllProperties = async () => {
   await getAdminUser(); // check admin rechten
 
@@ -749,7 +748,6 @@ export const fetchAllProperties = async () => {
       name: true,
       price: true,
       profileId: true,
-      // voeg eventueel meer velden toe die admin wil zien
     },
     orderBy: {
       createdAt: 'desc',
@@ -757,22 +755,21 @@ export const fetchAllProperties = async () => {
   });
 };
 
-// Admin kan property verwijderen zonder user check
 export async function deletePropertyAction(formData: FormData) {
-  await getAdminUser(); // check admin rechten
+  await getAdminUser();
 
   const propertyId = formData.get('propertyId') as string;
 
+  if (!propertyId) throw new Error('Geen property ID meegegeven');
+
   try {
     await db.property.delete({
-      where: {
-        id: propertyId,
-      },
+      where: { id: propertyId },
     });
 
-    revalidatePath('/admin'); // of waar je admin pagina is
+    revalidatePath('/admin'); // ververst de admin pagina
     return { message: 'Property succesvol verwijderd' };
   } catch (error) {
-    return renderError(error);
+    throw new Error('Verwijderen mislukt: ' + (error as Error).message);
   }
 }
