@@ -755,10 +755,8 @@ export const fetchAllProperties = async () => {
   });
 };
 
-export async function deletePropertyAction(formData: FormData) {
+export async function deletePropertyAction({ propertyId }: { propertyId: string }) {
   await getAdminUser();
-
-  const propertyId = formData.get('propertyId') as string;
 
   if (!propertyId) {
     throw new Error('Geen bedrijf ID meegegeven');
@@ -780,8 +778,9 @@ export async function deletePropertyAction(formData: FormData) {
     revalidatePath('/admin');
     return { message: 'Bedrijf succesvol verwijderd' };
   } catch (error) {
-    console.error('Verwijderfout:', error); // ← wordt zichtbaar in terminal/log
+    console.error('Verwijderfout:', error);
     throw new Error('Verwijderen mislukt. Probeer het opnieuw of controleer het ID.');
   }
 }
+
 

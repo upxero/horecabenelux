@@ -17,10 +17,9 @@ export default async function AdminPropertiesTable() {
               <Link href={`/admin/properties/${property.id}/edit`} className="text-blue-600 hover:underline">
                 Bewerk
               </Link>
-              <FormContainer action={deletePropertyAction}>
-                <input type="hidden" name="propertyId" value={property.id} />
+              <FormContainer action={deletePropertyAction.bind(null, { propertyId: property.id })}>
                 <button type="submit" className="text-red-600 hover:underline">
-                  Verwijderen
+                    Verwijderen
                 </button>
               </FormContainer>
             </div>
