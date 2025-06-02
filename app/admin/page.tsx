@@ -1,3 +1,4 @@
+import AdminPropertiesTable from '@/components/admin/AdminPropertiesTable';
 import ChartsContainer from '@/components/admin/ChartsContainer';
 import {
   ChartsLoadingContainer,
@@ -15,6 +16,7 @@ function AdminPage() {
       <Suspense fallback={<ChartsLoadingContainer />}>
         <ChartsContainer />
       </Suspense>
+      <AdminPropertiesTable />
     </>
   );
 }

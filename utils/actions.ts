@@ -738,3 +738,41 @@ export const fetchReservationStats = async () => {
     amount: totals._sum.orderTotal || 0,
   };
 };
+
+// Haal alle properties op, voor admin
+export const fetchAllProperties = async () => {
+  await getAdminUser(); // check admin rechten
+
+  return db.property.findMany({
+    select: {
+      id: true,
+      name: true,
+      price: true,
+      profileId: true,
+      // voeg eventueel meer velden toe die admin wil zien
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+};
+
+// Admin kan property verwijderen zonder user check
+export async function deletePropertyAction(formData: FormData) {
+  await getAdminUser(); // check admin rechten
+
+  const propertyId = formData.get('propertyId') as string;
+
+  try {
+    await db.property.delete({
+      where: {
+        id: propertyId,
+      },
+    });
+
+    revalidatePath('/admin'); // of waar je admin pagina is
+    return { message: 'Property succesvol verwijderd' };
+  } catch (error) {
+    return renderError(error);
+  }
+}
