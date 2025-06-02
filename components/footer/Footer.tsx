@@ -41,7 +41,7 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Jouw e-mailadres"
-              className="w-full sm:w-auto flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#B75BAA]"
+              className="w-full sm:w-auto flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-[#B75BAA]"
             />
             <button
               type="submit"

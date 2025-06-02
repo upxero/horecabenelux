@@ -60,7 +60,7 @@ const ContactForm: React.FC = () => {
         placeholder="Naam"
         value={formData.name}
         onChange={handleChange}
-        className="w-full p-2 border rounded"
+        className="w-full p-2 border rounded focus:outline-none focus:ring-1 focus:ring-[#B75BAA]"
         required
       />
       <input
@@ -69,7 +69,7 @@ const ContactForm: React.FC = () => {
         placeholder="E-mailadres"
         value={formData.email}
         onChange={handleChange}
-        className="w-full p-2 border rounded"
+        className="w-full p-2 border rounded focus:outline-none focus:ring-1 focus:ring-[#B75BAA]"
         required
       />
       <textarea
@@ -78,7 +78,7 @@ const ContactForm: React.FC = () => {
         value={formData.message}
         onChange={handleChange}
         rows={5}
-        className="w-full p-2 border rounded"
+        className="w-full p-2 border rounded focus:outline-none focus:ring-1 focus:ring-[#B75BAA]"
         required
       />
       <button
