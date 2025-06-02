@@ -18,7 +18,7 @@ export async function POST(req: Request) {
 
   try {
     await transporter.sendMail({
-      from: `"Horeca Benelux Contactformulier" <info@horecabenelux.be>`,
+      from: `"Horeca Benelux Contactformulier" <info@horecabenelux.com>`,
       to: "info@horecabenelux.com", 
       subject: `Nieuw bericht van ${name}`,
       html: `
