@@ -22,7 +22,7 @@ const bundles = [
       'Meer zichtbaarheid',
       'Maandelijkse rapportages',
       'Klanten kunnen reviews plaatsen',
-      'Prioriteit op vermelding',
+      'Prioriteit + vermelding op socials (50.000+ volgers)',
     ],
   },
   {
@@ -34,7 +34,7 @@ const bundles = [
       'Meer zichtbaarheid',
       'Maandelijkse rapportages',
       'Klanten kunnen reviews plaatsen',
-      'Prioriteit op vermelding',
+      'Prioriteit + vermelding op socials (50.000+ volgers)',
       'Exclusieve promoties',
     ],
   },
