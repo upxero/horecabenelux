@@ -1,4 +1,6 @@
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { SiTiktok } from 'react-icons/si';
+import ScrollToCategories from '../home/ScrollToCategories';
 
 export default function Footer() {
   return (
@@ -27,9 +29,9 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-gray-800 mb-2">Voor horecaliefhebbers</h4>
           <ul className="space-y-1">
-            <li><a href="/in-de-buurt" className="hover:underline">Horecazaken in de buurt</a></li>
+            <ScrollToCategories />
             <li><a href="/faq" className="hover:underline">Veelgestelde vragen</a></li>
-            <li><a href="/registreer" className="hover:underline">Ben jij een horecazaak?</a></li>
+            <li><a href="/lid-worden" className="hover:underline">Lid worden</a></li>
           </ul>
         </div>
 
@@ -70,6 +72,9 @@ export default function Footer() {
           </a>
           <a href="https://www.youtube.com/@HorecaBenelux-youtube" target="_blank" rel="noopener noreferrer" className="hover:text-red-600">
             <FaYoutube size={20} />
+          </a>
+          <a href="https://www.tiktok.com/@horecabenelux" target="_blank" rel="noopener noreferrer" className="hover:text-black">
+            <SiTiktok size={20} />
           </a>
         </div>
       </div>

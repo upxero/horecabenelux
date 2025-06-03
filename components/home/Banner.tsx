@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaYoutube, FaSearchPlus } from 'react-icons/fa';
+import { SiTiktok } from 'react-icons/si';
 import { FiPlus } from 'react-icons/fi';
 import { FaCheck } from 'react-icons/fa';
 import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
@@ -119,6 +120,15 @@ export default function Banner() {
               className="hover:text-white/70 transition"
             >
               <FaYoutube className="text-3xl" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@horecabenelux"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="hover:text-white/70 transition"
+            >
+              <SiTiktok className="text-3xl" />
             </a>
           </div>
 
