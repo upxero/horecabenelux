@@ -10,6 +10,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { nlNL } from '@clerk/localizations'
 import CookiePopup from '@/components/popup/cookie';
 import MessengerButton from "@/components/socials/MessengerButton";
+import WhatsAppButton from "@/components/socials/WhatsAppButton";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </ClerkProvider>
         <Footer />
         <MessengerButton />
+        <WhatsAppButton />
         <CookiePopup />
       </body>
     </html>
