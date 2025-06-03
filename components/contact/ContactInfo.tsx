@@ -2,6 +2,7 @@
 
 import React from "react";
 import { FaFacebook, FaInstagram, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { SiTiktok } from 'react-icons/si';
 
 const ContactInfo: React.FC = () => {
   return (
@@ -55,6 +56,14 @@ const ContactInfo: React.FC = () => {
           className="hover:text-red-600"
         >
           <FaYoutube size={24} />
+        </a>
+        <a
+          href="https://www.tiktok.com/@horecabenelux"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-black"
+        >
+          <SiTiktok size={24} />
         </a>
       </div>
     </div>
