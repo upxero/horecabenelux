@@ -90,7 +90,7 @@ export default function LidWordenPage() {
                 Lid worden
               </a>
             </Link>
-            <p className="mt-4 text-sm text-white/80 text-center">Prijzen zijn inclusief btw.</p>
+            <p className="mt-4 text-sm text-white/80 text-center">Prijzen zijn exclusief btw.</p>
           </div>
         ))}
       </div>
