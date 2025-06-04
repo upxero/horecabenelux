@@ -4,7 +4,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto max-w-6xl xl:max-w-7xl px-8;
+    @apply mx-auto max-w-6xl xl:max-w-7xl px-4 sm:px-8;
   }
 }
 
@@ -32,10 +32,6 @@
     --radius: 0.5rem;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }  
-
   .dark {
     --background: 20 14.3% 4.1%;
     --foreground: 60 9.1% 97.8%;
@@ -57,12 +53,23 @@
     --input: 12 6.5% 15.1%;
     --ring: 20.5 90.2% 48.2%;
   }
-}
 
-@layer base {
-  * {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
