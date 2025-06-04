@@ -88,7 +88,7 @@ export default function AboutPage() {
           role: "Webontwikkeling & technische infrastructuur"
         }].map(({ src, alt, name, role }) => (
           <div key={name} className="text-center">
-            <div className="flex justify-center items-center mx-auto mb-4 w-[300px] h-[300px] rounded-xl border-4 border-gray-200 overflow-hidden relative">
+            <div className="relative mx-auto mb-4 aspect-square w-full max-w-xs rounded-xl border-4 border-gray-200 overflow-hidden">
               <Image
                 src={src}
                 alt={alt}
