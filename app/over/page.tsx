@@ -1,5 +1,9 @@
 // app/about/page.tsx
 import Image from "next/image";
+import {
+  FaWhatsapp,
+  FaLinkedin
+} from "react-icons/fa";
 
 export default function AboutPage() {
   return (
@@ -71,22 +75,32 @@ export default function AboutPage() {
 
       {/* FOTO-SECTION ONDERAAN */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {[{
-          src: "/images/jeffrey.png",
-          alt: "Portret van Jeffrey De Kraker",
-          name: "Jeffrey De Kraker",
-          role: "Sociale media, sales & communitybeheer"
-        },{
-          src: "/images/tibor.png",
-          alt: "Portret van Tibor Babori",
-          name: "Tibor Babori",
-          role: "Marketing & strategische communicatie"
-        },{
-          src: "/images/michael.png",
-          alt: "Portret van Michael Bernard",
-          name: "Michael Bernard",
-          role: "Webontwikkeling & technische infrastructuur"
-        }].map(({ src, alt, name, role }) => (
+        {[
+          {
+            src: "/images/jeffrey.png",
+            alt: "Portret van Jeffrey De Kraker",
+            name: "Jeffrey De Kraker",
+            role: "Sociale media, sales & communitybeheer",
+            linkedin: "https://www.linkedin.com/in/jeffrey-de-kraker-523432233", 
+            whatsapp: "+32470982295",
+          },
+          {
+            src: "/images/tibor.png",
+            alt: "Portret van Tibor Babori",
+            name: "Tibor Babori",
+            role: "Marketing & strategische communicatie",
+            linkedin: "https://www.linkedin.com/in/tiborbabori/", 
+            whatsapp: "+32471664994",
+          },
+          {
+            src: "/images/michael.png",
+            alt: "Portret van Michael Bernard",
+            name: "Michael Bernard",
+            role: "Webontwikkeling & technische infrastructuur",
+            linkedin: "https://www.linkedin.com/in/upxero/", 
+            whatsapp: "+3197010268675",
+          },
+        ].map(({ src, alt, name, role, linkedin, whatsapp }) => (
           <div key={name} className="text-center">
             <div className="relative mx-auto mb-4 aspect-square w-full max-w-xs rounded-xl border-4 border-gray-200 overflow-hidden">
               <Image
@@ -99,7 +113,27 @@ export default function AboutPage() {
               />
             </div>
             <h3 className="text-lg font-semibold text-orange-600">{name}</h3>
-            <p className="text-sm text-gray-700">{role}</p>
+            <p className="text-sm text-gray-700 mb-2">{role}</p>
+            <div className="flex justify-center gap-4 text-xl text-gray-600">
+              <a
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="hover:text-orange-500 transition-colors"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href={`https://wa.me/${whatsapp.replace(/\D/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="hover:text-green-500 transition-colors"
+              >
+                <FaWhatsapp />
+              </a>
+            </div>
           </div>
         ))}
       </section>
