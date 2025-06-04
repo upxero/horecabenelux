@@ -9,7 +9,7 @@ const CompanyDetailsPage = () => {
         <strong>Handelsnaam:</strong> Horeca Benelux<br />
         <strong>Postadres:</strong><br />
         Horeca Benelux<br />
-        Zinkstraat 24 Unit G5708<br />
+        Zinkstraat 24 Unit E8807<br />
         4823 AD Breda<br />
         Nederland
       </p>

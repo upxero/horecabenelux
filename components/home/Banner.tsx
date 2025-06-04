@@ -10,7 +10,7 @@ import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
 
 export default function Banner() {
   const [followers, setFollowers] = useState(0);
-  const targetFollowers = 50000;
+  const targetFollowers = 55000;
 
   useEffect(() => {
     let current = 0;
