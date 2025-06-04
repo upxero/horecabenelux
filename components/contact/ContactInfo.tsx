@@ -1,8 +1,16 @@
 "use client";
 
 import React from "react";
-import { FaFacebook, FaInstagram, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { SiTiktok } from 'react-icons/si';
+import {
+  FaFacebook,
+  FaInstagram,
+  FaYoutube,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaLinkedin
+} from "react-icons/fa";
+import { SiTiktok } from "react-icons/si";
 
 const ContactInfo: React.FC = () => {
   return (
@@ -12,9 +20,12 @@ const ContactInfo: React.FC = () => {
       <div className="flex items-start gap-3">
         <FaMapMarkerAlt className="text-[#B75BAA] mt-1" />
         <p>
-          <strong>Postadres:</strong><br />
-          Horeca Benelux<br />
-          Zinkstraat 24 Unit G5708<br />
+          <strong>Postadres:</strong>
+          <br />
+          Horeca Benelux
+          <br />
+          Zinkstraat 24 Unit G5708
+          <br />
           4823 AD Breda, Nederland
         </p>
       </div>
@@ -27,12 +38,17 @@ const ContactInfo: React.FC = () => {
       <div className="flex items-start gap-3">
         <FaPhone className="text-[#B75BAA] mt-1" />
         <div>
-          <p><strong>Telefoon NL:</strong> +31 97 010268675</p>
-          <p><strong>Telefoon BE:</strong> +32 491 10 01 43</p>
+          <p>
+            <strong>Telefoon NL:</strong> +31 97 010268675
+          </p>
+          <p>
+            <strong>Telefoon BE:</strong> +32 491 10 01 43
+          </p>
         </div>
       </div>
 
-      <div className="flex gap-4 mt-4">
+      {/* SOCIALS */}
+      <div className="flex gap-4 mt-4 flex-wrap">
         <a
           href="https://www.facebook.com/Partyeventsaruba"
           target="_blank"
@@ -65,9 +81,37 @@ const ContactInfo: React.FC = () => {
         >
           <SiTiktok size={24} />
         </a>
+        <a
+          href="https://www.linkedin.com/in/jeffrey-de-kraker-523432233"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-blue-700"
+          title="Jeffrey De Kraker"
+        >
+          <FaLinkedin size={24} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/tiborbabori/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-blue-700"
+          title="Tibor Babori"
+        >
+          <FaLinkedin size={24} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/upxero/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-blue-700"
+          title="Michael Bernard"
+        >
+          <FaLinkedin size={24} />
+        </a>
       </div>
     </div>
   );
 };
 
 export default ContactInfo;
+
