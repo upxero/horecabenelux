@@ -8,6 +8,8 @@ const isPublicRoute = createRouteMatcher([
   '/contact',
   '/api/contact',
   '/lid-worden',  
+  '/ontstaan',
+  '/over',
 ]);
 
 const isAdminRoute = createRouteMatcher(['/admin(.*)']);
