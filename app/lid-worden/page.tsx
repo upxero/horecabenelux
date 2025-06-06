@@ -3,7 +3,7 @@ import { FaCheck, FaGem } from 'react-icons/fa';
 
 const bundles = [
   {
-    title: '3 maanden bundel',
+    title: '3 maanden lidmaatschapbundel',
     pricePerMonth: 5.99,
     totalPrice: 5.99 * 3,
     duration: '3 maanden',
@@ -14,7 +14,7 @@ const bundles = [
     ],
   },
   {
-    title: '6 maanden bundel',
+    title: '6 maanden lidmaatschapbundel',
     pricePerMonth: 5.49,
     totalPrice: 5.49 * 6,
     duration: '6 maanden',
@@ -26,7 +26,7 @@ const bundles = [
     ],
   },
   {
-    title: '12 maanden bundel',
+    title: '12 maanden lidmaatschapbundel',
     pricePerMonth: 4.99,
     totalPrice: 59.88,
     duration: '12 maanden',
