@@ -19,7 +19,7 @@ const getAuthUser = async () => {
   if (!user) {
     throw new Error('U moet ingelogd zijn om toegang te krijgen tot deze route');
   }
-  if (!user.privateMetadata.hasProfile) redirect('/profile/create');
+  if (!user.privateMetadata.hasProfile) redirect('/profiel/create');
   return user;
 };
 
@@ -110,7 +110,7 @@ export const updateProfileAction = async (
       data: validatedFields,
     });
 
-    revalidatePath('/profile');
+    revalidatePath('/profiel');
     return { message: 'Profiel is succesvol bijgewerkt' };
   } catch (error) {
     return renderError(error);
@@ -135,7 +135,7 @@ export const updateProfileImageAction = async (
         profileImage: fullPath,
       },
     });
-    revalidatePath('/profile');
+    revalidatePath('/profiel');
     return { message: 'Profielafbeelding is succesvol bijgewerkt' };
   } catch (error) {
     return renderError(error);
