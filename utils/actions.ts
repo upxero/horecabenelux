@@ -89,7 +89,7 @@ export const fetchProfile = async () => {
       clerkId: user.id,
     },
   });
-  if (!profile) redirect('/profile/create');
+  if (!profile) redirect('/profiel/create');
   return profile;
 };
 
