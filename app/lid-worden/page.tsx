@@ -4,19 +4,20 @@ import { FaCheck, FaGem } from 'react-icons/fa';
 const bundles = [
   {
     title: '3 maanden lidmaatschapbundel',
-    pricePerMonth: 5.99,
-    totalPrice: 5.99 * 3,
+    pricePerMonth: 7.25,
+    totalPrice: 21.75,
     duration: '3 maanden',
     benefits: [
       'Meer zichtbaarheid',
       'Maandelijkse rapportages',
       'Klanten kunnen reviews plaatsen',
     ],
+    url: 'https://www.paypro.nl/product/3_maanden_lidmaatschap/122172',
   },
   {
     title: '6 maanden lidmaatschapbundel',
-    pricePerMonth: 5.49,
-    totalPrice: 5.49 * 6,
+    pricePerMonth: 6.65,
+    totalPrice: 39.90,
     duration: '6 maanden',
     benefits: [
       'Meer zichtbaarheid',
@@ -24,11 +25,12 @@ const bundles = [
       'Klanten kunnen reviews plaatsen',
       'Prioriteit op vermelding',
     ],
+    url: 'https://www.paypro.nl/product/6_maanden_lidmaatschap/122173',
   },
   {
     title: '12 maanden lidmaatschapbundel',
-    pricePerMonth: 4.99,
-    totalPrice: 59.88,
+    pricePerMonth: 6.00,
+    totalPrice: 72.00,
     duration: '12 maanden',
     benefits: [
       'Meer zichtbaarheid',
@@ -37,6 +39,7 @@ const bundles = [
       'Prioriteit op vermelding',
       'Exclusieve promoties',
     ],
+    url: 'https://www.paypro.nl/product/12_maanden_lidmaatschap/122174',
   },
 ];
 
@@ -55,7 +58,7 @@ export default function LidWordenPage() {
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {bundles.map(({ title, pricePerMonth, totalPrice, duration, benefits }) => (
+        {bundles.map(({ title, pricePerMonth, totalPrice, duration, benefits, url }) => (
           <div
             key={title}
             className="rounded-2xl p-8 shadow-xl text-white flex flex-col"
@@ -69,7 +72,7 @@ export default function LidWordenPage() {
             </h2>
 
             <p className="text-lg mb-6">
-              <span className="font-bold text-xl">€{pricePerMonth.toFixed(2)}</span> per maand
+              <span className="font-bold text-xl">€{pricePerMonth.toFixed(2)}</span> per maand incl. btw
               <br />
               <span className="text-sm opacity-90">
                 Totaal: €{totalPrice.toFixed(2)} voor {duration}
@@ -85,12 +88,16 @@ export default function LidWordenPage() {
               ))}
             </ul>
 
-            <Link href="/betaling" legacyBehavior>
-              <a className="mt-auto inline-block bg-white text-black font-semibold py-3 px-6 rounded-full text-center transition duration-300 hover:bg-gray-100 hover:text-[#8e24aa]">
+            <Link href={url} legacyBehavior>
+              <a
+                className="mt-auto inline-block bg-white text-black font-semibold py-3 px-6 rounded-full text-center transition duration-300 hover:bg-gray-100 hover:text-[#8e24aa]"
+                target="_blank"
+              >
                 Lid worden
               </a>
             </Link>
-            <p className="mt-4 text-sm text-white/80 text-center">Prijzen zijn exclusief btw.</p>
+
+            <p className="mt-4 text-sm text-white/80 text-center">Prijzen zijn inclusief btw.</p>
           </div>
         ))}
       </div>
