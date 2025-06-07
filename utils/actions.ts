@@ -145,7 +145,7 @@ export const updateProfileImageAction = async (
 export const createPropertyAction = async (
   prevState: any,
   formData: FormData
-): Promise<{ message: string }> => {
+) => {
   const user = await getAuthUser();
 
   const profile = await db.profile.findUnique({
@@ -173,9 +173,9 @@ export const createPropertyAction = async (
     });
 
     revalidatePath('/');
-    return { message: 'Bedrijf succesvol aangemaakt' }; // <-- ✅ consistent object
+    redirect('/?success=bedrijf-toegevoegd'); // ✅ hier redirect
   } catch (error) {
-    return renderError(error); // <-- deze moet ook altijd een { message } object geven
+    return renderError(error);
   }
 };
 

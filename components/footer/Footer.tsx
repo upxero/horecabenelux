@@ -30,7 +30,7 @@ export default function Footer() {
           <h4 className="font-semibold text-gray-800 mb-2">Voor horecaliefhebbers</h4>
           <ul className="space-y-1">
             <ScrollToCategories />
-            <li><a href="/faq" className="hover:underline">Veelgestelde vragen</a></li>
+            {/*<li><a href="/faq" className="hover:underline">Veelgestelde vragen</a></li> */}
             <li><a href="/lid-worden" className="hover:underline">Lid worden</a></li>
           </ul>
         </div>
