@@ -11,6 +11,7 @@ import { nlNL } from '@clerk/localizations'
 import CookiePopup from '@/components/popup/cookie';
 import MessengerButton from "@/components/socials/MessengerButton";
 import WhatsAppButton from "@/components/socials/WhatsAppButton";
+import { Toaster } from '@/components/ui/toaster';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MessengerButton />
         <WhatsAppButton />
         <CookiePopup />
+        <Toaster />
       </body>
     </html>
   );
