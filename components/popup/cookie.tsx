@@ -101,7 +101,7 @@ const CookiePopup = () => {
             </p>
             <p className="text-xs text-gray-500 mt-2">
               Lees onze{" "}
-              <a href="/cookieverklaring" target="_blank" rel="noopener noreferrer" className="underline text-blue-600">
+              <a href="/cookiebeleid" target="_blank" rel="noopener noreferrer" className="underline text-blue-600">
                 cookieverklaring
               </a>{" "}
               voor meer informatie.
