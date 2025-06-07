@@ -4,28 +4,70 @@ import { useEffect, useState } from "react";
 import Cookie from "js-cookie";
 import Image from "next/image";
 
+type Consent = {
+  essential: boolean; // altijd true
+  analytics: boolean;
+  marketing: boolean;
+};
+
+const COOKIE_NAME = "cookie-consent";
+
 const CookiePopup = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+  const [consent, setConsent] = useState<Consent>({
+    essential: true,
+    analytics: false,
+    marketing: false,
+  });
 
   useEffect(() => {
-    const consent = Cookie.get("cookie-consent");
-    if (!consent) {
+    const cookieValue = Cookie.get(COOKIE_NAME);
+    if (!cookieValue) {
       setIsVisible(true);
+    } else {
+      try {
+        const savedConsent = JSON.parse(cookieValue);
+        setConsent({
+          essential: true,
+          analytics: savedConsent.analytics ?? false,
+          marketing: savedConsent.marketing ?? false,
+        });
+      } catch {
+        // als cookie corrupt is, toon popup
+        setIsVisible(true);
+      }
     }
   }, []);
 
-  const handleAcceptAll = () => {
-    Cookie.set("cookie-consent", "accepted", { expires: 365 });
-    Cookie.set("analytics-enabled", "true", { expires: 365 });
+  const saveConsent = (newConsent: Consent) => {
+    // Zet cookie met JSON-string, 365 dagen geldig
+    Cookie.set(COOKIE_NAME, JSON.stringify(newConsent), { expires: 365 });
+
+    // Zet of verwijder analytics cookie
+    if (newConsent.analytics) {
+      Cookie.set("analytics-enabled", "true", { expires: 365 });
+    } else {
+      Cookie.remove("analytics-enabled");
+    }
+
+    // Zet of verwijder marketing cookie
+    if (newConsent.marketing) {
+      Cookie.set("marketing-enabled", "true", { expires: 365 });
+    } else {
+      Cookie.remove("marketing-enabled");
+    }
+
+    setConsent(newConsent);
     setIsVisible(false);
   };
 
+  const handleAcceptAll = () => {
+    saveConsent({ essential: true, analytics: true, marketing: true });
+  };
+
   const handleSavePreferences = () => {
-    Cookie.set("cookie-consent", "custom", { expires: 365 });
-    Cookie.set("analytics-enabled", analyticsEnabled.toString(), { expires: 365 });
-    setIsVisible(false);
+    saveConsent({ essential: true, analytics: consent.analytics, marketing: consent.marketing });
   };
 
   if (!isVisible) return null;
@@ -47,9 +89,24 @@ const CookiePopup = () => {
           <>
             <h2 className="text-lg font-semibold text-gray-800">We gebruiken cookies 🍪</h2>
             <p className="text-sm text-gray-600">
-              We gebruiken cookies om uw ervaring te verbeteren. Door op &quot;Alles accepteren&quot; te klikken, gaat u akkoord met het gebruik van cookies.
+              Wij gebruiken cookies om uw ervaring te verbeteren en om anonieme statistieken te verzamelen. 
+              Door op <strong>Alles accepteren</strong> te klikken, gaat u akkoord met het gebruik van alle cookies. 
+              U kunt ook <button
+                onClick={() => setShowSettings(true)}
+                className="text-blue-600 underline ml-1"
+                type="button"
+              >
+                uw voorkeuren instellen
+              </button>.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 mt-2 w-full">
+            <p className="text-xs text-gray-500 mt-2">
+              Lees onze{" "}
+              <a href="/cookieverklaring" target="_blank" rel="noopener noreferrer" className="underline text-blue-600">
+                cookieverklaring
+              </a>{" "}
+              voor meer informatie.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 mt-4 w-full">
               <button
                 onClick={handleAcceptAll}
                 className="w-full sm:w-auto px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition cursor-pointer"
@@ -83,13 +140,31 @@ const CookiePopup = () => {
                   <input
                     type="checkbox"
                     className="sr-only peer"
-                    checked={analyticsEnabled}
-                    onChange={(e) => setAnalyticsEnabled(e.target.checked)}
+                    checked={consent.analytics}
+                    onChange={(e) => setConsent({ ...consent, analytics: e.target.checked })}
                   />
                   <div className="w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-600 transition duration-300"></div>
                   <div
                     className={`absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300 ${
-                      analyticsEnabled ? "translate-x-5" : ""
+                      consent.analytics ? "translate-x-5" : ""
+                    }`}
+                  ></div>
+                </label>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <span>Marketingcookies</span>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    className="sr-only peer"
+                    checked={consent.marketing}
+                    onChange={(e) => setConsent({ ...consent, marketing: e.target.checked })}
+                  />
+                  <div className="w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-600 transition duration-300"></div>
+                  <div
+                    className={`absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300 ${
+                      consent.marketing ? "translate-x-5" : ""
                     }`}
                   ></div>
                 </label>
