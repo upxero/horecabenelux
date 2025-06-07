@@ -1,6 +1,7 @@
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { SiTiktok } from 'react-icons/si';
 import ScrollToCategories from '../home/ScrollToCategories';
+import Logo from '../navbar/Logo'; 
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
         {/* Logo + slogan */}
         <div>
-          <img src="/horecabenelux-logo.png" alt="Horeca Benelux" className="w-24 mb-3" />
+          <Logo />
           <p className="font-semibold text-gray-800">
             Hét platform voor iedereen met een passie voor horeca
           </p>
