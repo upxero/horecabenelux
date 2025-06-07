@@ -10,6 +10,8 @@ const isPublicRoute = createRouteMatcher([
   '/lid-worden',  
   '/ontstaan',
   '/over',
+  '/privacy',
+  '/cookiebeleid',
 ]);
 
 const isAdminRoute = createRouteMatcher(['/admin(.*)']);
