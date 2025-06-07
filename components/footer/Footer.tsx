@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
         {/* Logo + slogan */}
         <div>
-          <Logo />
+        <Logo size={120} /> 
           <p className="font-semibold text-gray-800">
             Hét platform voor iedereen met een passie voor horeca
           </p>
@@ -60,8 +60,9 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto mt-10 px-4 flex flex-col md:flex-row justify-between items-center border-t border-gray-300 pt-4 gap-4">
         <div className="flex flex-col md:flex-row items-center gap-4">
           <span>© {new Date().getFullYear()} Horeca Benelux</span>
-          <a href="/privacy" className="hover:underline">PrivacyVoorwaarden</a>
           <a href="/algemene-voorwaarden" className="hover:underline">AlgemeneVoorwaarden</a>
+          <a href="/privacy" className="hover:underline">PrivacyVoorwaarden</a>
+          <a href="/cookiebeleid" className="hover:underline">Cookiebeleid</a>
           <a href="/bedrijfsgegevens" className="hover:underline">Bedrijfsgegevens</a>
         </div>
         <div className="flex gap-4 text-gray-600">

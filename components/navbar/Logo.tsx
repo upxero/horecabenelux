@@ -1,8 +1,13 @@
+// components/navbar/Logo.tsx
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '../ui/button'
 
-function Logo() {
+interface LogoProps {
+  size?: number
+}
+
+export default function Logo({ size = 75 }: LogoProps) {
   return (
     <Button
       variant="ghost"
@@ -13,8 +18,8 @@ function Logo() {
         <Image
           src="/horecabenelux-logo.png"
           alt="Horeca Benelux Logo"
-          width={75}  
-          height={75} 
+          width={size}  
+          height={size} 
           priority
         />
       </Link>
@@ -22,4 +27,3 @@ function Logo() {
   )
 }
 
-export default Logo
