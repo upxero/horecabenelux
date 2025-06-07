@@ -90,7 +90,7 @@ const CookiePage = () => {
             </tr>
             <tr>
               <td className="border border-gray-300 px-3 py-2">YouTube</td>
-              <td className="border border-gray-300 px-3 py-2">Ingesloten video's en gebruikersinteractie</td>
+              <td className="border border-gray-300 px-3 py-2">Ingesloten video&apos;s en gebruikersinteractie</td>
               <td className="border border-gray-300 px-3 py-2">Marketing</td>
             </tr>
             <tr>
