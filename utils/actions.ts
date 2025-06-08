@@ -607,6 +607,36 @@ export const updatePropertyAction = async (
   }
 };
 
+export const createPropertyImageAction = async (
+  prevState: any,
+  formData: FormData
+): Promise<{ message: string }> => {
+  const user = await getAuthUser();
+
+  try {
+    const image = formData.get('image') as File;
+
+    if (!image || image.size === 0) {
+      return { message: 'Een afbeelding is verplicht.' };
+    }
+
+    const validatedFields = validateWithZodSchema(imageSchema, { image });
+    const fullPath = await uploadImage(validatedFields.image);
+
+    await db.property.create({
+      data: {
+        image: fullPath,
+        profileId: user.id,
+        // andere verplichte velden zoals 'title' enz. toevoegen hier
+      },
+    });
+
+    return { message: '' }; // Of eventueel: { message: 'Succesvol aangemaakt!' }
+  } catch (error) {
+    return renderError(error);
+  }
+};
+
 export const updatePropertyImageAction = async (
   prevState: any,
   formData: FormData

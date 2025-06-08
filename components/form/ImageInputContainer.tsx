@@ -1,8 +1,9 @@
 'use client';
+
 import { useState } from 'react';
+import { useFormState } from 'react-dom';
 import Image from 'next/image';
 import { Button } from '../ui/button';
-import FormContainer from './FormContainer';
 import ImageInput from './ImageInput';
 import { SubmitButton } from './Buttons';
 import { type actionFunction } from '@/utils/types';
@@ -16,13 +17,22 @@ type ImageInputContainerProps = {
   children?: React.ReactNode;
 };
 
-function ImageInputContainer(props: ImageInputContainerProps) {
-  const { image, name, action, text } = props;
+export default function ImageInputContainer({
+  image,
+  name,
+  action,
+  text,
+  children,
+}: ImageInputContainerProps) {
   const [isUpdateFormVisible, setUpdateFormVisible] = useState(false);
 
   const userIcon = (
     <LuUser className='w-24 h-24 bg-primary rounded text-white mb-4' />
   );
+
+  const initialState = { message: '' };
+  const [state, formAction] = useFormState(action, initialState);
+
   return (
     <div>
       {image ? (
@@ -36,6 +46,7 @@ function ImageInputContainer(props: ImageInputContainerProps) {
       ) : (
         userIcon
       )}
+
       <Button
         variant='outline'
         size='sm'
@@ -43,16 +54,20 @@ function ImageInputContainer(props: ImageInputContainerProps) {
       >
         {text}
       </Button>
+
       {isUpdateFormVisible && (
         <div className='max-w-lg mt-4'>
-          <FormContainer action={action}>
-            {props.children}
+          <form action={formAction}>
+            {children}
             <ImageInput />
             <SubmitButton size='sm' />
-          </FormContainer>
+
+            {state?.message && (
+              <p className='text-sm text-red-500 mt-2'>{state.message}</p>
+            )}
+          </form>
         </div>
       )}
     </div>
   );
 }
-export default ImageInputContainer;
