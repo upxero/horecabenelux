@@ -172,7 +172,6 @@ export const createPropertyAction = async (
       },
     });
 
-    revalidatePath('/');
     return { message: 'Bedrijf succesvol aangemaakt' }; // <-- ✅ consistent object
   } catch (error) {
     return renderError(error); // <-- deze moet ook altijd een { message } object geven
