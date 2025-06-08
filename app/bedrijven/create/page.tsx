@@ -1,3 +1,5 @@
+'use client';
+import { useRef, useState } from 'react';
 import FormInput from '@/components/form/FormInput';
 import FormContainer from '@/components/form/FormContainer';
 import { createPropertyAction } from '@/utils/actions';
@@ -9,15 +11,29 @@ import AddressInput from '@/components/form/AddressInput';
 import CountriesInput from '@/components/form/CountriesInput';
 import ImageInput from '@/components/form/ImageInput';
 import AmenitiesInput from '@/components/form/AmenitiesInput';
+
 function CreatePropertyPage() {
+  const imageInputRef = useRef<HTMLInputElement>(null);
+  const [imageError, setImageError] = useState('');
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const fileInput = imageInputRef.current;
+    if (fileInput && fileInput.files?.length === 0) {
+      e.preventDefault();
+      setImageError('Gelieve een afbeelding te selecteren.');
+    } else {
+      setImageError('');
+    }
+  };
+
   return (
     <section>
       <h1 className='text-2xl font-semibold mb-8 capitalize'>
-      bedrijf toevoegen
+        bedrijf toevoegen
       </h1>
       <div className='border p-8 rounded'>
         <h3 className='text-lg mb-4 font-medium'>Algemene informatie</h3>
-        <FormContainer action={createPropertyAction}>
+        <FormContainer action={createPropertyAction} onSubmit={handleFormSubmit}>
           <div className='grid md:grid-cols-2 gap-8 mb-4'>
             <FormInput
               name='name'
@@ -55,21 +71,24 @@ function CreatePropertyPage() {
               label='Instagram link'
               placeholder='https://instagram.com/voorbeeld'
             />
-            {/* price */}
             <PriceInput />
-            {/* categories */}
             <CategoriesInput />
           </div>
-          {/* text area / description */}
+
           <TextAreaInput
             name='description'
             labelText='Beschrijving (10 - 1000 woorden)'
           />
+
           <div className='grid sm:grid-cols-2 gap-8 mt-4'>
-          <AddressInput defaultValue="" />
-          <CountriesInput />
-            <ImageInput />
+            <AddressInput defaultValue='' />
+            <CountriesInput />
+            <ImageInput
+              ref={imageInputRef}
+              error={imageError}
+            />
           </div>
+
           <h3 className='text-lg mt-10 mb-6 font-medium'>Voorzieningen</h3>
           <AmenitiesInput />
           <SubmitButton text='Bedrijf toevoegen' className='mt-12' />
@@ -78,4 +97,5 @@ function CreatePropertyPage() {
     </section>
   );
 }
+
 export default CreatePropertyPage;
