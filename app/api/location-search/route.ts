@@ -1,3 +1,4 @@
+// app/api/location-search/route.ts
 import { NextResponse } from 'next/server';
 
 export async function GET(req: Request) {
@@ -8,10 +9,26 @@ export async function GET(req: Request) {
     return NextResponse.json([], { status: 400 });
   }
 
-  const res = await fetch(
-    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&addressdetails=1`
-  );
+  try {
+    const res = await fetch(
+      `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&addressdetails=1`,
+      {
+        headers: {
+          "User-Agent": "upxero.com info@upxero.com", 
+        },
+      }
+    );
 
-  const data = await res.json();
-  return NextResponse.json(data);
+    if (!res.ok) {
+      const text = await res.text(); // 🐞 log HTML of foutboodschap
+      console.error("Nominatim fout:", res.status, text);
+      return NextResponse.json([], { status: res.status });
+    }
+
+    const data = await res.json();
+    return NextResponse.json(data);
+  } catch (err: any) {
+    console.error("API crashed:", err.message);
+    return NextResponse.json([], { status: 500 });
+  }
 }
