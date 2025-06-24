@@ -571,11 +571,12 @@ export async function deleteRentalAction(prevState: { propertyId: string }) {
 
 export const fetchRentalDetails = async (propertyId: string) => {
   const user = await getAuthUser();
+  const isAdmin = user.id === process.env.ADMIN_USER_ID;
 
   return db.property.findUnique({
     where: {
       id: propertyId,
-      profileId: user.id,
+      ...(isAdmin ? {} : { profileId: user.id }),
     },
   });
 };
