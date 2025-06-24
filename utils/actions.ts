@@ -586,6 +586,7 @@ export const updatePropertyAction = async (
 ): Promise<{ message: string }> => {
   const user = await getAuthUser();
   const propertyId = formData.get('id') as string;
+  const isAdmin = user.id === process.env.ADMIN_USER_ID;
 
   try {
     const rawData = Object.fromEntries(formData);
@@ -593,7 +594,7 @@ export const updatePropertyAction = async (
     await db.property.update({
       where: {
         id: propertyId,
-        profileId: user.id,
+        ...(isAdmin ? {} : { profileId: user.id }),
       },
       data: {
         ...validatedFields,
@@ -618,11 +619,12 @@ export const updatePropertyImageAction = async (
     const image = formData.get('image') as File;
     const validatedFields = validateWithZodSchema(imageSchema, { image });
     const fullPath = await uploadImage(validatedFields.image);
+    const isAdmin = user.id === process.env.ADMIN_USER_ID;
 
     await db.property.update({
       where: {
         id: propertyId,
-        profileId: user.id,
+        ...(isAdmin ? {} : { profileId: user.id }),
       },
       data: {
         image: fullPath,
