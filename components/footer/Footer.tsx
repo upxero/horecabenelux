@@ -2,6 +2,7 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { SiTiktok } from 'react-icons/si';
 import ScrollToCategories from '../home/ScrollToCategories';
 import Logo from '../navbar/Logo'; 
+import NewsletterForm from "../form/NewsletterForm";
 
 export default function Footer() {
   return (
@@ -40,19 +41,7 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-gray-800 mb-2">Nieuwsbrief</h4>
           <p className="text-gray-600 text-sm mb-2">Blijf op de hoogte van het laatste horecanieuws</p>
-          <form className="flex flex-col sm:flex-row gap-2">
-            <input
-              type="email"
-              placeholder="Jouw e-mailadres"
-              className="w-full sm:w-auto flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-[#B75BAA]"
-            />
-            <button
-              type="submit"
-              className="bg-[#B75BAA] text-white px-4 py-2 rounded-md text-sm hover:bg-[#a84c9b]"
-            >
-              Abonneren
-            </button>
-          </form>
+          <NewsletterForm />
         </div>
       </div>
 
