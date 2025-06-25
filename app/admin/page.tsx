@@ -1,4 +1,5 @@
 import AdminPropertiesTable from '@/components/admin/AdminPropertiesTable';
+import AdminReviewsTable from '@/components/admin/AdminReviewsTable';
 import ChartsContainer from '@/components/admin/ChartsContainer';
 import {
   ChartsLoadingContainer,
@@ -16,8 +17,14 @@ function AdminPage() {
       <Suspense fallback={<ChartsLoadingContainer />}>
         <ChartsContainer />
       </Suspense>
-      <AdminPropertiesTable />
+
+      {/* Bedrijven en reviews naast elkaar */}
+      <div className="grid md:grid-cols-2 gap-6 mt-10">
+        <AdminPropertiesTable />
+        <AdminReviewsTable />
+      </div>
     </>
   );
 }
 export default AdminPage;
+

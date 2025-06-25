@@ -319,6 +319,48 @@ export async function createReviewAction(
   }
 }
 
+export const fetchAllReviews = async () => {
+  await getAdminUser(); // alleen admins
+
+  return db.review.findMany({
+    select: {
+      id: true,
+      rating: true,
+      comment: true,
+      property: {
+        select: {
+          name: true,
+        },
+      },
+      profile: {
+        select: {
+          firstName: true,
+        },
+      },
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+};
+
+export const deleteReviewByAdminAction = async ({ reviewId }: { reviewId: string }) => {
+  await getAdminUser();
+
+  try {
+    await db.review.delete({
+      where: {
+        id: reviewId,
+      },
+    });
+
+    revalidatePath('/admin'); // of /admin/reviews als je een aparte route hebt
+    return { message: 'Review is succesvol verwijderd' };
+  } catch (error) {
+    return renderError(error);
+  }
+};
+
 export async function fetchPropertyReviews(propertyId: string) {
   const reviews = await db.review.findMany({
     where: {
@@ -675,11 +717,13 @@ export const fetchStats = async () => {
       paymentStatus: true,
     },
   });
+  const reviewsCount = await db.review.count(); // ✅ hier toegevoegd
 
   return {
     usersCount,
     propertiesCount,
     bookingsCount,
+    reviewsCount, // ✅ mee teruggeven
   };
 };
 
