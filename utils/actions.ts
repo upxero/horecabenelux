@@ -829,4 +829,31 @@ export async function deletePropertyAction({ propertyId }: { propertyId: string 
   }
 }
 
+export const fetchAllProfiles = async () => {
+  await getAdminUser(); // alleen admins mogen dit
+
+  return await db.profile.findMany({
+    orderBy: { createdAt: 'desc' },
+    select: {
+      id: true,
+      firstName: true,
+      lastName: true,
+      email: true,
+    },
+  });
+};
+
+export const deleteProfileById = async ({ profileId }: { profileId: string }) => {
+  await getAdminUser(); // bescherming tegen ongeautoriseerde verwijderingen
+
+  await db.profile.delete({
+    where: {
+      id: profileId,
+    },
+  });
+
+  revalidatePath('/admin'); // of een specifiek pad als je dat gebruikt
+};
+
+
 

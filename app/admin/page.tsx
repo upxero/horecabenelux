@@ -1,5 +1,6 @@
 import AdminPropertiesTable from '@/components/admin/AdminPropertiesTable';
 import AdminReviewsTable from '@/components/admin/AdminReviewsTable';
+import AdminUsersTable from '@/components/admin/AdminUsersTable';
 import ChartsContainer from '@/components/admin/ChartsContainer';
 import {
   ChartsLoadingContainer,
@@ -22,6 +23,7 @@ function AdminPage() {
       <div className="grid md:grid-cols-2 gap-6 mt-10">
         <AdminPropertiesTable />
         <AdminReviewsTable />
+        <AdminUsersTable />
       </div>
     </>
   );
