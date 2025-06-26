@@ -843,17 +843,18 @@ export const fetchAllProfiles = async () => {
   });
 };
 
-export const deleteProfileById = async ({ profileId }: { profileId: string }) => {
+export const deleteProfileById = async ({ profileId }: { profileId: string }): Promise<{ message: string }> => {
   await getAdminUser(); // bescherming tegen ongeautoriseerde verwijderingen
 
   await db.profile.delete({
-    where: {
-      id: profileId,
-    },
+    where: { id: profileId },
   });
 
-  revalidatePath('/admin'); // of een specifiek pad als je dat gebruikt
+  revalidatePath('/admin');
+
+  return { message: 'Profiel is verwijderd' }; 
 };
+
 
 
 
