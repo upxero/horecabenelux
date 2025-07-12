@@ -12,6 +12,8 @@ import {
   FaDrumstickBite,
   FaHamburger,
   FaFish,
+  FaBoxOpen,         // toegevoegd voor 'leverancier'
+  FaFrenchFries,     // fictief - zie opmerking onder
 } from 'react-icons/fa';
 import { MdLocalBar } from 'react-icons/md';
 import { GiCakeSlice, GiMeat } from 'react-icons/gi';
@@ -36,63 +38,25 @@ export type CategoryLabel =
   | 'delishop'
   | 'snackbar'
   | 'slagerij'
-  | 'viswinkel';
+  | 'viswinkel'
+  | 'frituur'
+  | 'leverancier';
 
 export const categories: Category[] = [
-  {
-    label: 'restaurant',
-    icon: FaUtensils,
-  },
-  {
-    label: 'cafe',
-    icon: FaCoffee,
-  },
-  {
-    label: 'foodtruck',
-    icon: FaTruck,
-  },
-  {
-    label: 'bar',
-    icon: MdLocalBar,
-  },
-  {
-    label: 'hotel',
-    icon: FaBed,
-  },
-  {
-    label: 'icecream',
-    icon: FaIceCream,
-  },
-  {
-    label: 'catering',
-    icon: FaConciergeBell,
-  },
-  {
-    label: 'traiteur',
-    icon: FaConciergeBell,
-  },
-  {
-    label: 'bakkerij',
-    icon: GiCakeSlice,
-  },
-  {
-    label: 'drinks',
-    icon: FaGlassCheers,
-  },
-  {
-    label: 'delishop',
-    icon: FaStoreAlt,
-  },
-  {
-    label: 'snackbar',
-    icon: FaHamburger,
-  },
-  {
-    label: 'slagerij',
-    icon: GiMeat,
-  },
-  {
-    label: 'viswinkel',
-    icon: FaFish,
-  },
+  { label: 'restaurant', icon: FaUtensils },
+  { label: 'cafe', icon: FaCoffee },
+  { label: 'foodtruck', icon: FaTruck },
+  { label: 'bar', icon: MdLocalBar },
+  { label: 'hotel', icon: FaBed },
+  { label: 'icecream', icon: FaIceCream },
+  { label: 'catering', icon: FaConciergeBell },
+  { label: 'traiteur', icon: FaConciergeBell },
+  { label: 'bakkerij', icon: GiCakeSlice },
+  { label: 'drinks', icon: FaGlassCheers },
+  { label: 'delishop', icon: FaStoreAlt },
+  { label: 'snackbar', icon: FaHamburger },
+  { label: 'slagerij', icon: GiMeat },
+  { label: 'viswinkel', icon: FaFish },
+  { label: 'frituur', icon: FaDrumstickBite }, 
+  { label: 'leverancier', icon: FaBoxOpen },
 ];

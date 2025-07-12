@@ -132,7 +132,7 @@ const AlgemeneVoorwaardenPage = () => {
             Storingen, onderhoud of technische problemen vallen buiten zijn aansprakelijkheid.
         </p>
         <p className="mt-2">
-            Bugs kunnen gemeld worden via <a href="mailto:info@horeca-benelux.com" className="text-blue-600 underline">info@horeca-benelux.com</a>.
+            Bugs kunnen gemeld worden via <a href="mailto:support@horeca-benelux.com" className="text-blue-600 underline">support@horeca-benelux.com</a>.
             Indien het platform langer dan 5 dagen niet werkt, wordt een pro rata terugbetaling voorzien — zonder erkenning van aansprakelijkheid.
         </p>
 
@@ -285,6 +285,20 @@ const AlgemeneVoorwaardenPage = () => {
         <p className="mt-2">
             De Dienstverlener is niet aansprakelijk voor inhoud, juistheid of gevolgen van deze gebruikerscontent.
             Horeca Benelux kan reacties verwijderen die ongepast of strijdig zijn met deze voorwaarden.
+        </p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold mb-2">Artikel 16 – Vragen, klachten en communicatie</h2>
+        <p>
+            Vragen over deze voorwaarden of klachten over de dienstverlening kunnen gericht worden aan:
+            <br />
+            <strong>E-mail:</strong> <a href="mailto:info@horecabenelux.com" className="text-blue-600 underline">info@horecabenelux.com</a>
+            <br />
+            <strong>Postadres:</strong> Zinkstraat 24 Unit E8807, 4823 AD Breda, Nederland
+        </p>
+        <p className="mt-2">
+            Horeca Benelux verbindt zich ertoe om binnen 14 werkdagen een inhoudelijke reactie te geven op schriftelijk ingediende klachten.
         </p>
       </section>
 
