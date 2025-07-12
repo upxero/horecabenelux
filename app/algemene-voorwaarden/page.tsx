@@ -132,7 +132,7 @@ const AlgemeneVoorwaardenPage = () => {
             Storingen, onderhoud of technische problemen vallen buiten zijn aansprakelijkheid.
         </p>
         <p className="mt-2">
-            Bugs kunnen gemeld worden via <a href="mailto:support@horeca-benelux.com" className="text-blue-600 underline">support@horeca-benelux.com</a>.
+            Bugs kunnen gemeld worden via <a href="mailto:support@horecabenelux.com" className="text-blue-600 underline">support@horecabenelux.com</a>.
             Indien het platform langer dan 5 dagen niet werkt, wordt een pro rata terugbetaling voorzien — zonder erkenning van aansprakelijkheid.
         </p>
 

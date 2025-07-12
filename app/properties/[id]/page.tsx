@@ -32,12 +32,14 @@ const DynamicBookingWrapper = dynamic(
 );
 
 async function PropertyDetailsPage({ params }: { params: { id: string } }) {
-  const property = await fetchPropertyDetails(params.id);
+  const { userId } = await auth(); 
+
+  const property = await fetchPropertyDetails(params.id); 
   if (!property) redirect('/');
+
   const firstName = property.profile.firstName;
   const profileImage = property.profile.profileImage;
 
-  const { userId } = await auth();
   const isNotOwner = property.profile.clerkId !== userId;
   const reviewDoesNotExist =
     userId && isNotOwner && !(await findExistingReview(userId, property.id));
