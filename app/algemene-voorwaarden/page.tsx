@@ -56,17 +56,6 @@ const AlgemeneVoorwaardenPage = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">DSA-verklaring</h2>
-        <p>
-          In overeenstemming met artikel 24(2) van de Digital Services Act (DSA), moeten onlineplatforms informatie publiceren over hun gemiddelde aantal maandelijks actieve gebruikers in de EU.
-        </p>
-        <p className="mt-2">
-          Voor de periode 1 januari 2025 – 30 april 2025 telde Horeca Benelux minder dan 100.000 maandelijkse actieve ontvangers binnen de EU.
-          Horeca Benelux wordt daarom niet geclassificeerd als een Zeer Groot Onlineplatform (VLOP).
-        </p>
-      </section>
-
-      <section className="mb-8">
         <h2 className="text-xl font-semibold mb-2">Artikel 1 – Algemeen – achtergrond</h2>
         <p><strong>Definities van partijen:</strong></p>
         <ul className="list-disc list-inside mb-4">

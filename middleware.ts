@@ -10,6 +10,7 @@ const isPublicRoute = createRouteMatcher([
   '/lid-worden',  
   '/ontstaan',
   '/over',
+  '/algemene-voorwaarden',
   '/privacy',
   '/cookiebeleid',
 ]);
