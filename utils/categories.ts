@@ -12,12 +12,10 @@ import {
   FaDrumstickBite,
   FaHamburger,
   FaFish,
-  FaBoxOpen,         // toegevoegd voor 'leverancier'
-  FaFrenchFries,     // fictief - zie opmerking onder
+  FaBoxOpen,       
 } from 'react-icons/fa';
 import { MdLocalBar } from 'react-icons/md';
 import { GiCakeSlice, GiMeat } from 'react-icons/gi';
-import { TbBuildingCottage } from 'react-icons/tb';
 
 type Category = {
   label: CategoryLabel;
