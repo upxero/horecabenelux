@@ -11,18 +11,19 @@ function HomePage({
 }) {
   return (
     <section>
-
-      <section id="categories-list">
+      <section id="categories-list" className="mb-8">
         <CategoriesList
           category={searchParams.category}
           search={searchParams.search}
         />
       </section>
       <Suspense fallback={<LoadingCards />}>
-        <PropertiesContainer
-          category={searchParams.category}
-          search={searchParams.search}
-        />
+        <section>
+          <PropertiesContainer
+            category={searchParams.category}
+            search={searchParams.search}
+          />
+        </section>
       </Suspense>
       <section className="mt-20"> 
       <Banner /> 
